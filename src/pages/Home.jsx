@@ -1,12 +1,19 @@
+import { QueryClient, QueryClientProvider } from "react-query";
 import HeroSection from "../ui/HeroSection";
-import HomeCard from "../ui/HomeCard";
+import HomeRows from "../ui/HomeRows";
 
 function Home() {
+  const queryClient = new QueryClient();
+
   return (
     <div>
       <HeroSection />
-      <div className="pt-5 px-8 h-[35rem]">
-        <HomeCard />
+      <div className="py-5 px-12 h-[35rem]">
+        <QueryClientProvider client={queryClient}>
+          <HomeRows RowHeading={"Eid Special"} />
+          <HomeRows RowHeading={"Eid Special"} />
+          <HomeRows RowHeading={"Eid Special"} />
+        </QueryClientProvider>
       </div>
     </div>
   );
