@@ -1,5 +1,11 @@
+import HeroSection from "../ui/HeroSection";
+
 function Home() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <HeroSection />
+    </div>
+  );
 }
 
 export default Home;
