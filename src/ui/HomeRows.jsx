@@ -130,7 +130,7 @@ function HomeRows({ RowHeading }) {
         <h2 className="text-2xl pb-2 font-semibold ">{RowHeading}</h2>
         <button
           onClick={() => setShowAll(!showAll)}
-          className="text-white bg-green-500 hover:bg-green-700  text-md font-semibold rounded-lg px-5 py-2.5 mr-14 text-center  "
+          className="text-white bg-primary hover:bg-primaryHover  text-md font-semibold rounded-lg px-5 py-2.5 mr-14 text-center  "
         >
           {showAll ? "See Less.." : "See More.."}
         </button>

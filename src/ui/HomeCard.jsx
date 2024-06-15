@@ -21,10 +21,10 @@ function HomeCard({ img, title, price }) {
         </div>
 
         <div className="flex items-center justify-between pt-3">
-          <span className="text-2xl font-bold text-green-500 ">
+          <span className="text-2xl font-bold text-primary ">
             {`৳ ${price}`}
           </span>
-          <button className="text-white bg-green-500 hover:bg-green-700  font-medium rounded-lg text-sm px-5 py-2.5 text-center  ">
+          <button className="text-white bg-primary hover:bg-primaryHover  font-medium rounded-lg text-sm px-5 py-2.5 text-center  ">
             Add to cart
           </button>
         </div>
