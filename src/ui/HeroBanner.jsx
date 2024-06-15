@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 function HeroBanner({ source }) {
   return (
     <div className="relative">
@@ -5,9 +7,8 @@ function HeroBanner({ source }) {
         <h1 className="text-primary text-5xl font-semibold select-none pointer-events-none bg-">
           Fresh food at your door
         </h1>
-        <button className="absolute top-[6rem] left-[30%] text-white text-2xl font-semibold bg-primary hover:bg-green-700 px-10 py-4 rounded-3xl">
-          Order Now
-        </button>
+
+        <Button label="Order Now" type="primary" />
       </div>
       <img
         className="w-screen h-[40rem] select-none pointer-events-none"

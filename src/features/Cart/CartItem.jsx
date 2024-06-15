@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import { formatCurrency } from "../../utils/helpers";
 import DeleteItem from "./DeleteItem";
 import EmptyCart from "./EmptyCart";
 import UpdateItemQuantity from "./UpdateItemQuantity";

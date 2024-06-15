@@ -46,6 +46,7 @@ import PageNotFound from "./ui/PageNotFound";
 import LoadingContext from "./ContextApi/LoadingContext";
 import { useState } from "react";
 import Spinner from "./utility/Spinner";
+import Cart from "./features/Cart/Cart";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -61,6 +62,7 @@ function App() {
             <Route path="/category" element={<Category />} />
             <Route path="/product" element={<Product />} />
             <Route path="/about" element={<About />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="/*" element={<PageNotFound />} />
           </Route>
         </Routes>

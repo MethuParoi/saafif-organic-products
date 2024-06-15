@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { useState } from "react";
+import { IoSearch } from "react-icons/io5";
+import { BsCart4 } from "react-icons/bs";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -47,14 +49,34 @@ function Navbar() {
               <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                 <span className="sr-only">Menu</span>
 
-                <span className="sr-only">Search icon</span>
+                <span className="sr-only">search icon</span>
               </div>
-              <input
-                type="text"
-                id="search-navbar"
-                className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500  dark:border-gray-600 placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Search..."
-              />
+              <div className="flex items-center">
+                {/* Cart */}
+                <div
+                  onClick={() => {
+                    navigate("/cart");
+                  }}
+                  className="mr-5 cursor-pointer"
+                >
+                  <BsCart4 className="text-4xl hover:text-primary text-primaryHover" />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    id="search-navbar"
+                    className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500  dark:border-gray-600 placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Search..."
+                  />
+                </div>
+                {/* Search Button */}
+                <div
+                  onClick={() => console.log("search button clicked")}
+                  className="z-10 ml-[-2.5rem] px-3 py-[10px] rounded-lg bg-primary hover:bg-primaryHover"
+                >
+                  <IoSearch className="text-xl font-bold" />
+                </div>
+              </div>
             </div>
           </div>
           <div
