@@ -8,9 +8,12 @@ import {
 } from "./cartSlice";
 import EmptyCart from "./EmptyCart";
 import Button from "../../ui/Button";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 function Cart() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const cart = useSelector(getCart);
   const totalCartQuantity = useSelector(getTotalCartQunatity);
@@ -20,8 +23,14 @@ function Cart() {
   if (!cart.length) return <EmptyCart />;
 
   return (
-    <div className="my-4 mx-8">
-      <button to="/home">&larr; Back to home</button>
+    <div className="my-4 mx-10">
+      <button
+        onClick={() => {
+          navigate("/home");
+        }}
+      >
+        &larr; Back to home
+      </button>
 
       <h2 className="mt-7 text-xl font-semibold">Your cart</h2>
 
@@ -32,8 +41,8 @@ function Cart() {
       </ul>
 
       <div>
-        <p className="font-semibold text-gray-700 space-x-4 sm:space-x-6 text-sm md:text-xl">
-          <span>{Number(totalCartPrice)}</span>
+        <p className="pt-2 font-semibold text-gray-700 space-x-4 sm:space-x-6 text-sm md:text-xl">
+          <span>৳ {Number(totalCartPrice)}</span>
           <span>{totalCartQuantity} items</span>
         </p>
       </div>
@@ -42,7 +51,10 @@ function Cart() {
         <Button
           label="Clear cart"
           type="standard"
-          onClick={() => dispatch(clearCart())}
+          onClick={() => {
+            dispatch(clearCart());
+            toast.success("Cart cleared!");
+          }}
         />
       </div>
     </div>

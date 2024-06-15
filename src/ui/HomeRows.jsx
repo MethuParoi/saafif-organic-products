@@ -147,6 +147,7 @@ function HomeRows({ RowHeading }) {
                 img={product.image}
                 title={product.title}
                 price={product.price}
+                description={product.description}
               />
             ))}
         </div>
