@@ -142,6 +142,8 @@ function HomeRows({ RowHeading }) {
             displayedProducts.map((product) => (
               <HomeCard
                 key={product.id}
+                id={product.id}
+                category={product.category}
                 img={product.image}
                 title={product.title}
                 price={product.price}
