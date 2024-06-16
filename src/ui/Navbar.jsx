@@ -8,6 +8,7 @@ import { getTotalCartQunatity } from "../features/Cart/cartSlice";
 import useProduct from "../services/FakeApi";
 import LoadingContext from "../ContextApi/LoadingContext";
 import SearchContext from "../ContextApi/SearchContext";
+import SortContext from "../ContextApi/SortContext";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -24,6 +25,9 @@ function Navbar() {
   const { isLoading, setIsLoading } = useContext(LoadingContext);
   const { data: ProductDesc, error } = useProduct(setIsLoading);
 
+  //For showing all data at product page on mount
+  const { setSortedProducts } = useContext(SortContext);
+
   useEffect(() => {
     if (ProductDesc && searchValue) {
       const filtered = ProductDesc.filter((item) =>
@@ -35,7 +39,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="border-gray-200 bg-gray-100">
+      <nav className="z-10 border-gray-200 bg-gray-100 sticky top-0">
         <div className="min-w-screen flex flex-wrap items-center justify-between px-14 py-4">
           <button
             onClick={() => {
@@ -154,6 +158,7 @@ function Navbar() {
                 <button
                   onClick={() => {
                     navigate("/product");
+                    setSortedProducts(ProductDesc);
                   }}
                   className="block py-2 px-3 text-gray-900 rounded md:p-0 hover:text-green-400 text-xl border-gray-700"
                 >

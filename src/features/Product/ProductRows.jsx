@@ -3,10 +3,14 @@ import HomeCard from "../../ui/HomeCard";
 import useProduct from "../../services/FakeApi";
 import LoadingContext from "../../ContextApi/LoadingContext";
 import { useNavigate } from "react-router-dom";
+import SortContext from "../../ContextApi/SortContext";
 
-function HomeRows({ RowHeading, displayedProducts }) {
+function ProductRows({ RowHeading }) {
   const { setIsLoading } = useContext(LoadingContext);
-  const { error } = useProduct(setIsLoading);
+  const { data, error } = useProduct(setIsLoading);
+
+  const { sortedProducts } = useContext(SortContext);
+  const ProductDesc = sortedProducts ? sortedProducts : data;
 
   const navigate = useNavigate();
 
@@ -32,8 +36,8 @@ function HomeRows({ RowHeading, displayedProducts }) {
       <div className="border-b-2 border-gray-400 mr-[50rem]"></div>
       <div className="py-5">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-5">
-          {displayedProducts &&
-            displayedProducts.map((product) => (
+          {data &&
+            ProductDesc.map((product) => (
               <HomeCard
                 key={product.id}
                 id={product.id}
@@ -50,4 +54,4 @@ function HomeRows({ RowHeading, displayedProducts }) {
   );
 }
 
-export default HomeRows;
+export default ProductRows;
