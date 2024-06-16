@@ -3,10 +3,14 @@ import logo from "../assets/logo.png";
 import { useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import { BsCart4 } from "react-icons/bs";
+import { useSelector } from "react-redux";
+import { getTotalCartQunatity } from "../features/Cart/cartSlice";
 
 function Navbar() {
   const navigate = useNavigate();
   const [isExpanded, setIsExpanded] = useState(false);
+
+  const totalCartQuantity = useSelector(getTotalCartQunatity);
 
   return (
     <>
@@ -57,22 +61,25 @@ function Navbar() {
                   onClick={() => {
                     navigate("/cart");
                   }}
-                  className="mr-5 cursor-pointer"
+                  className="mr-5 cursor-pointer relative"
                 >
                   <BsCart4 className="text-4xl hover:text-primary text-primaryHover" />
+                  <div className="text-md bg-secondary text-gray-50 font-bold h-6 w-6 rounded-full flex items-center justify-center absolute top-[25px] left-[-12px]">
+                    {totalCartQuantity}
+                  </div>
                 </div>
                 <div>
                   <input
                     type="text"
                     id="search-navbar"
-                    className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500  dark:border-gray-600 placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="block w-full px-2 h-[40px] ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500  dark:border-gray-600 placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Search..."
                   />
                 </div>
                 {/* Search Button */}
                 <div
                   onClick={() => console.log("search button clicked")}
-                  className="z-10 ml-[-2.5rem] px-3 py-[10px] rounded-lg bg-primary hover:bg-primaryHover"
+                  className="z-10 ml-[-2.5rem] px-3 h-[42px] rounded-r-lg bg-primary hover:bg-primaryHover flex items-center justify-center"
                 >
                   <IoSearch className="text-xl font-bold" />
                 </div>
