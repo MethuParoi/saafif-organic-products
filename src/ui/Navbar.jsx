@@ -1,16 +1,37 @@
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import { BsCart4 } from "react-icons/bs";
 import { useSelector } from "react-redux";
 import { getTotalCartQunatity } from "../features/Cart/cartSlice";
+import useProduct from "../services/FakeApi";
+import LoadingContext from "../ContextApi/LoadingContext";
+import SearchContext from "../ContextApi/SearchContext";
 
 function Navbar() {
   const navigate = useNavigate();
-  const [isExpanded, setIsExpanded] = useState(false);
 
+  //ContextApi hooks
+  const { setFilteredProducts } = useContext(SearchContext);
+
+  //state variables
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+
+  //reducer hooks
   const totalCartQuantity = useSelector(getTotalCartQunatity);
+  const { isLoading, setIsLoading } = useContext(LoadingContext);
+  const { data: ProductDesc, error } = useProduct(setIsLoading);
+
+  useEffect(() => {
+    if (ProductDesc && searchValue) {
+      const filtered = ProductDesc.filter((item) =>
+        item.title.toLowerCase().includes(searchValue.toLowerCase())
+      );
+      setFilteredProducts(filtered);
+    }
+  }, [ProductDesc, searchValue]);
 
   return (
     <>
@@ -68,8 +89,17 @@ function Navbar() {
                     {totalCartQuantity}
                   </div>
                 </div>
+
                 <div>
                   <input
+                    onChange={(e) => {
+                      setSearchValue(e.target.value);
+                      navigate("/search");
+                      if (!e.target.value) {
+                        navigate("/home");
+                      }
+                    }}
+                    onBlur={() => setSearchValue("")}
                     type="text"
                     id="search-navbar"
                     className="block w-full px-2 h-[40px] ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500  dark:border-gray-600 placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -78,7 +108,9 @@ function Navbar() {
                 </div>
                 {/* Search Button */}
                 <div
-                  onClick={() => console.log("search button clicked")}
+                  onClick={() => {
+                    navigate("/search");
+                  }}
                   className="z-10 ml-[-2.5rem] px-3 h-[42px] rounded-r-lg bg-primary hover:bg-primaryHover flex items-center justify-center"
                 >
                   <IoSearch className="text-xl font-bold" />

@@ -49,6 +49,8 @@ import Spinner from "./utility/Spinner";
 import Cart from "./features/Cart/Cart";
 import { Toaster } from "react-hot-toast";
 import { QueryClient, QueryClientProvider } from "react-query";
+import Search from "./features/Search/Search";
+import SearchContext from "./ContextApi/SearchContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -61,45 +63,49 @@ const queryClient = new QueryClient({
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   return (
     <QueryClientProvider client={queryClient}>
-      <LoadingContext.Provider value={{ isLoading, setIsLoading }}>
-        {isLoading && <Spinner />}
-        <BrowserRouter>
-          <Routes>
-            <Route element={<AppLayout />}>
-              <Route index element={<Navigate replace to="home" />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/category" element={<Category />} />
-              <Route path="/product" element={<Product />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/*" element={<PageNotFound />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
-        <Toaster
-          position="top-center"
-          gutter={12}
-          containerStyle={{ margin: "8px" }}
-          toastOptions={{
-            success: {
-              duration: 5000,
-            },
-            error: {
-              duration: 5000,
-            },
-            style: {
-              fontSize: "16px",
-              maxWidth: "500px",
-              padding: "16px 24px",
-              backgroundColor: "#fffff",
-              color: "#3c434f",
-            },
-          }}
-        />
-      </LoadingContext.Provider>
+      <SearchContext.Provider value={{ filteredProducts, setFilteredProducts }}>
+        <LoadingContext.Provider value={{ isLoading, setIsLoading }}>
+          {isLoading && <Spinner />}
+          <BrowserRouter>
+            <Routes>
+              <Route element={<AppLayout />}>
+                <Route index element={<Navigate replace to="home" />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="/category" element={<Category />} />
+                <Route path="/product" element={<Product />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/search" element={<Search />} />
+                <Route path="/*" element={<PageNotFound />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
+          <Toaster
+            position="top-center"
+            gutter={12}
+            containerStyle={{ margin: "8px" }}
+            toastOptions={{
+              success: {
+                duration: 5000,
+              },
+              error: {
+                duration: 5000,
+              },
+              style: {
+                fontSize: "16px",
+                maxWidth: "500px",
+                padding: "16px 24px",
+                backgroundColor: "#fffff",
+                color: "#3c434f",
+              },
+            }}
+          />
+        </LoadingContext.Provider>
+      </SearchContext.Provider>
     </QueryClientProvider>
   );
 }
