@@ -9,6 +9,7 @@ import useProduct from "../services/FakeApi";
 import LoadingContext from "../ContextApi/LoadingContext";
 import SearchContext from "../ContextApi/SearchContext";
 import SortContext from "../ContextApi/SortContext";
+import ProductDropdown from "../features/Product/ProductDropdown";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -128,11 +129,11 @@ function Navbar() {
             } block`}
             id="navbar-search"
           >
-            <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  dark:border-gray-700">
+            <ul className="relative flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  dark:border-gray-700">
               <li>
                 <button
                   onClick={() => navigate("/home")}
-                  className="block py-2 px-3 rounded hover:text-green-400 text-xl text-gray-900 md:p-0 "
+                  className="block py-2 px-3 rounded hover:text-primary text-xl text-gray-900 md:p-0 "
                   aria-current="page"
                 >
                   Home
@@ -141,18 +142,18 @@ function Navbar() {
               <li>
                 <button
                   onClick={() => navigate("/about")}
-                  className="block py-2 px-3 text-gray-900 rounded md:p-0 dark:border-gray-700 hover:text-green-400 text-xl"
+                  className="block py-2 px-3 text-gray-900 rounded md:p-0 dark:border-gray-700 hover:text-primary text-xl"
                 >
                   About
                 </button>
               </li>
-              <li>
-                <button
-                  onClick={() => navigate("/category")}
-                  className="block py-2 px-3 text-gray-900 rounded md:p-0 hover:text-green-400 text-xl border-gray-700"
-                >
-                  Category
-                </button>
+              <li className="absolute left-[16rem] top-0">
+                <ProductDropdown
+                  label={"Category"}
+                  style={
+                    "text-center inline-flex items-center py-2 px-3 text-gray-900 rounded md:p-0 hover:text-primary text-xl border-gray-700"
+                  }
+                />
               </li>
               <li>
                 <button
@@ -160,7 +161,7 @@ function Navbar() {
                     navigate("/product");
                     setSortedProducts(ProductDesc);
                   }}
-                  className="block py-2 px-3 text-gray-900 rounded md:p-0 hover:text-green-400 text-xl border-gray-700"
+                  className="block py-2 px-3 text-gray-900 rounded md:p-0 hover:text-primary text-xl border-gray-700"
                 >
                   Products
                 </button>

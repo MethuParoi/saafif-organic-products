@@ -3,7 +3,7 @@ import useProduct from "../../services/FakeApi";
 import SortContext from "../../ContextApi/SortContext";
 import LoadingContext from "../../ContextApi/LoadingContext";
 
-function ProductDropdown() {
+function ProductDropdown({ label, style }) {
   const [isOpen, setIsOpen] = useState(false);
   const { setSortedProducts } = useContext(SortContext);
 
@@ -17,10 +17,10 @@ function ProductDropdown() {
         id="dropdownHoverButton"
         data-dropdown-toggle="dropdownHover"
         data-dropdown-trigger="hover"
-        className="text-white bg-primary hover:bg-primaryHover font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center "
+        className={style}
         type="button"
       >
-        select by category{" "}
+        {label}
         <svg
           className="w-2.5 h-2.5 ms-3"
           aria-hidden="true"
@@ -48,7 +48,7 @@ function ProductDropdown() {
             className="py-2 text-sm text-gray-800 "
             aria-labelledby="select by category"
           >
-            <li className="hover:bg-primaryHover hover:text-white">
+            <li className="hover:bg-primaryHover hover:text-white ">
               <button
                 onClick={() => {
                   const sorted = ProductDesc.filter(
@@ -56,7 +56,7 @@ function ProductDropdown() {
                   );
                   setSortedProducts(sorted);
                 }}
-                className="block px-4 py-2 h"
+                className="block px-4  py-2 w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
               >
                 men&apos;s clothing
               </button>
@@ -69,7 +69,7 @@ function ProductDropdown() {
                   );
                   setSortedProducts(sorted);
                 }}
-                className="block px-4 py-2 "
+                className="block px-4 py-2 w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
               >
                 women&apos;s clothing
               </button>
@@ -82,7 +82,7 @@ function ProductDropdown() {
                   );
                   setSortedProducts(sorted);
                 }}
-                className="block px-4 py-2 "
+                className="block px-4 py-2 w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
               >
                 jewelery
               </button>
@@ -95,7 +95,7 @@ function ProductDropdown() {
                   );
                   setSortedProducts(sorted);
                 }}
-                className="block px-4 py-2 "
+                className="block px-4 py-2 w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
               >
                 electronics
               </button>
