@@ -2,13 +2,16 @@ import { useContext, useState } from "react";
 import useProduct from "../../services/FakeApi";
 import SortContext from "../../ContextApi/SortContext";
 import LoadingContext from "../../ContextApi/LoadingContext";
+import { useNavigate } from "react-router-dom";
 
-function ProductDropdown({ label, style }) {
+function ProductDropdown({ label, style, category }) {
   const [isOpen, setIsOpen] = useState(false);
   const { setSortedProducts } = useContext(SortContext);
 
   const { isLoading, setIsLoading } = useContext(LoadingContext);
   const { data: ProductDesc, error } = useProduct(setIsLoading);
+
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -55,6 +58,9 @@ function ProductDropdown({ label, style }) {
                     (item) => item.category === "men's clothing"
                   );
                   setSortedProducts(sorted);
+                  if (category === "category") {
+                    navigate("/product");
+                  }
                 }}
                 className="block px-4  py-2 w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
               >
@@ -65,22 +71,12 @@ function ProductDropdown({ label, style }) {
               <button
                 onClick={() => {
                   const sorted = ProductDesc.filter(
-                    (item) => item.category === "women's clothing"
-                  );
-                  setSortedProducts(sorted);
-                }}
-                className="block px-4 py-2 w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
-              >
-                women&apos;s clothing
-              </button>
-            </li>
-            <li className="hover:bg-primaryHover hover:text-white">
-              <button
-                onClick={() => {
-                  const sorted = ProductDesc.filter(
                     (item) => item.category === "jewelery"
                   );
                   setSortedProducts(sorted);
+                  if (category === "category") {
+                    navigate("/product");
+                  }
                 }}
                 className="block px-4 py-2 w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
               >
@@ -91,9 +87,29 @@ function ProductDropdown({ label, style }) {
               <button
                 onClick={() => {
                   const sorted = ProductDesc.filter(
+                    (item) => item.category === "women's clothing"
+                  );
+                  setSortedProducts(sorted);
+                  if (category === "category") {
+                    navigate("/product");
+                  }
+                }}
+                className="block px-4 py-2 w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
+              >
+                women&apos;s clothing
+              </button>
+            </li>
+
+            <li className="hover:bg-primaryHover hover:text-white">
+              <button
+                onClick={() => {
+                  const sorted = ProductDesc.filter(
                     (item) => item.category === "electronics"
                   );
                   setSortedProducts(sorted);
+                  if (category === "category") {
+                    navigate("/product");
+                  }
                 }}
                 className="block px-4 py-2 w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
               >

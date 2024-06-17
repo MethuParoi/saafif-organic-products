@@ -153,6 +153,7 @@ function Navbar() {
                   style={
                     "text-center inline-flex items-center py-2 px-3 text-gray-900 rounded md:p-0 hover:text-primary text-xl border-gray-700"
                   }
+                  category={"category"}
                 />
               </li>
               <li>

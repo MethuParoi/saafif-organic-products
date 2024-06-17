@@ -10,6 +10,7 @@ function Product() {
           style={
             "text-white font-semibold bg-primary hover:bg-primaryHover rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center "
           }
+          category={"products"}
         />
       </div>
       <div>
