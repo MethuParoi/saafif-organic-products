@@ -11,8 +11,8 @@ function Home() {
       <div className="py-5 px-12 h-[35rem]">
         <QueryClientProvider client={queryClient}>
           <HomeRows RowHeading={"Eid Special"} />
-          <HomeRows RowHeading={"Eid Special"} />
-          <HomeRows RowHeading={"Eid Special"} />
+          <HomeRows RowHeading={"Trending items"} />
+          <HomeRows RowHeading={"Hot Deals"} />
         </QueryClientProvider>
       </div>
     </div>
