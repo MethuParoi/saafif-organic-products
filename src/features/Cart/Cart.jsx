@@ -23,7 +23,7 @@ function Cart() {
   if (!cart.length) return <EmptyCart />;
 
   return (
-    <div className="my-4 mx-10">
+    <div className="mt-4 mb-10 mx-10">
       <button
         onClick={() => {
           navigate("/home");
