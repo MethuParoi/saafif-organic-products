@@ -8,7 +8,7 @@ function Home() {
   return (
     <div>
       <HeroSection />
-      <div className="py-5 px-12 h-[35rem]">
+      <div className="py-5 px-12 h-[105rem]">
         <QueryClientProvider client={queryClient}>
           <HomeRows RowHeading={"Eid Special"} />
           <HomeRows RowHeading={"Trending items"} />
