@@ -24,16 +24,16 @@ function Product() {
   }, [ProductDesc, setSortedProducts]);
   return (
     <div className="lg:relative mb-40 lg:mb-0">
-      <div className="lg:absolute lg:top-[2rem] lg:left-[105rem] mt-4 ml-56">
+      <div className="lg:absolute md:top-[2rem] md:right-[7rem] lg:right-[10rem] xl:right-[14rem] mt-4 ml-56">
         <ProductDropdown
           label={"select by category"}
           style={
-            "text-white font-semibold bg-primary hover:bg-primaryHover rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center "
+            "text-white font-semibold bg-primary hover:bg-primaryHover rounded-lg text-sm px-2 md:px-5 py-2.5 text-center inline-flex items-center "
           }
           category={"products"}
         />
       </div>
-      <div>
+      <div className="lg:mx-8">
         <ProductRows RowHeading={"Products"} />
       </div>
     </div>

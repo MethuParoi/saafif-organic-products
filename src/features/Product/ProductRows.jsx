@@ -33,7 +33,7 @@ function ProductRows({ RowHeading }) {
       <div className="flex justify-between">
         <h2 className="text-2xl pb-2 font-semibold ">{RowHeading}</h2>
       </div>
-      <div className="border-b-2 border-gray-400 mr-[50rem]"></div>
+      <div className="border-b-2 border-gray-400"></div>
       <div className="py-5">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-5">
           {data &&
