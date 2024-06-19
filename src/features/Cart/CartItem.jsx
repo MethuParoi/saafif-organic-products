@@ -23,10 +23,10 @@ function CartItem({ item }) {
 
   return (
     <li className="py-4 flex flex-col md:relative">
-      <div className="flex gap-8">
-        <div>
+      <div className="flex lg:flex-row flex-col gap-8">
+        <div className="flex justify-center items-center md:flex-initial md:justify-start md:items-start">
           <img
-            className="rounded-lg h-[14rem] w-[12rem] object-contain object-center border-2 border-gray-400 shadow-lg"
+            className="rounded-lg md:h-[14rem] h-[14rem] w-[14rem] md:w-[12rem] object-contain object-center border-2 border-gray-400 shadow-lg"
             src={img}
             alt=""
           />
@@ -40,13 +40,13 @@ function CartItem({ item }) {
             ৳ {price * currentQuantity}
           </p>
 
-          <p className="pt-2 text-sm text-gray-500 max-w-[50rem]">
+          <p className="pt-2 pr-5 text-sm text-gray-500 max-w-[50rem]">
             {description}
           </p>
         </div>
       </div>
 
-      <div className="flex items-center gap-x-7 md:absolute md:top-[11rem] md:left-[14rem]">
+      <div className="flex items-center gap-x-7 pt-5 md:pt-0 md:absolute md:top-[11rem] md:left-[14rem]">
         <UpdateItemQuantity
           currentQuantity={currentQuantity}
           productId={productId}

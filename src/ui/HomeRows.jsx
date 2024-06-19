@@ -26,7 +26,7 @@ function HomeRows({ RowHeading }) {
           onClick={() => {
             navigate("/product");
           }}
-          className="text-white bg-primary hover:bg-primaryHover  text-md font-semibold rounded-lg px-5 py-2.5 mr-14 text-center  "
+          className="text-white bg-primary hover:bg-primaryHover  text-md font-semibold rounded-lg px-2 md:px-5 py-1 md:py-2.5 md:mr-14 text-center  "
         >
           {"See More.."}
         </button>

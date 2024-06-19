@@ -41,7 +41,7 @@ function Navbar() {
   return (
     <>
       <nav className="z-10 border-gray-200 bg-gray-100 sticky top-0">
-        <div className="min-w-screen flex flex-wrap items-center justify-between px-14 py-4">
+        <div className="min-w-screen flex flex-wrap items-center justify-between pl-4 pr-2 md:px-14 py-4">
           <button
             onClick={() => {
               navigate("/home");
@@ -81,13 +81,13 @@ function Navbar() {
 
                 <span className="sr-only">search icon</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center gap-2 md:gap-0">
                 {/* Cart */}
                 <div
                   onClick={() => {
                     navigate("/cart");
                   }}
-                  className="mr-5 cursor-pointer relative"
+                  className="ml-20 md:ml-0 mr-5 cursor-pointer relative"
                 >
                   <BsCart4 className="text-4xl hover:text-primary text-primaryHover" />
                   <div className="text-md bg-secondary text-gray-50 font-bold h-6 w-6 rounded-full flex items-center justify-center absolute top-[25px] left-[-12px]">
@@ -95,7 +95,7 @@ function Navbar() {
                   </div>
                 </div>
 
-                <div>
+                <div className="block">
                   <input
                     onChange={(e) => {
                       setSearchValue(e.target.value);

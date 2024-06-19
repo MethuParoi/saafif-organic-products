@@ -4,7 +4,7 @@ function EmptyCart() {
   const navigate = useNavigate();
 
   return (
-    <div className="my-8 mx-8">
+    <div className="my-8 mx-8 min-h-[40dvh]">
       <button
         onClick={() => {
           navigate("/home");

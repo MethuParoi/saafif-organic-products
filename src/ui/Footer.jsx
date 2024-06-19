@@ -6,12 +6,12 @@ import { RiCustomerService2Fill } from "react-icons/ri";
 function Footer() {
   return (
     <div>
-      <div className="bg-gray-100 text-gray-900 transition-all duration-200 px-[8rem] py-4 ">
+      <div className="bg-gray-100 text-gray-900 transition-all duration-200  md:px-[8rem] py-4 ">
         <div className="flex justify-center items-center mb-5">
           <img className="md:w-60 w-32 h-auto" src={logo} alt="Logo" />
         </div>
 
-        <div className="flex flex-col items-start justify-around lg:flex-row lg:justify-around mx-auto pb-4">
+        <div className="flex flex-col items-start justify-around lg:flex-row lg:justify-around mx-auto pb-4 pl-4 md:pl-0">
           <div className="min-h-[10rem]">
             <ul>
               <li>
@@ -53,7 +53,7 @@ function Footer() {
                     Useful Link
                   </h3>
                 </li>
-                <li className="block mr-6 last:mr-0 pt-2">
+                <li className="block md:mr-6 last:mr-0 pt-2">
                   <button
                     onClick={() => {
                       console.log("button clicked");
@@ -63,7 +63,7 @@ function Footer() {
                     About
                   </button>
                 </li>
-                <li className="block mr-6 last:mr-0 pt-2">
+                <li className="block md:mr-6 last:mr-0 pt-2">
                   <button
                     onClick={() => {
                       console.log("button clicked");
@@ -73,7 +73,7 @@ function Footer() {
                     Contact
                   </button>
                 </li>
-                <li className="block mr-6 last:mr-0 pt-2">
+                <li className="block md:mr-6 last:mr-0 pt-2">
                   <button
                     onClick={() => {
                       console.log("button clicked");
@@ -83,7 +83,7 @@ function Footer() {
                     Location
                   </button>
                 </li>
-                <li className="block mr-6 last:mr-0 pt-2">
+                <li className="block md:mr-6 last:mr-0 pt-2">
                   <button
                     onClick={() => {
                       console.log("button clicked");

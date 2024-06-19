@@ -23,8 +23,8 @@ function Product() {
     }
   }, [ProductDesc, setSortedProducts]);
   return (
-    <div className="relative min-h-[55dvh]">
-      <div className="absolute top-[2rem] left-[105rem]">
+    <div className="lg:relative mb-40 lg:mb-0">
+      <div className="lg:absolute lg:top-[2rem] lg:left-[105rem] mt-4 ml-56">
         <ProductDropdown
           label={"select by category"}
           style={
