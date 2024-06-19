@@ -8,6 +8,7 @@ import {
 } from "swiper/modules";
 import banner01 from "../assets/banner01.jpeg";
 
+
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -17,8 +18,11 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/autoplay";
 import HeroBanner from "./HeroBanner";
+import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 
 export default function HeroSection() {
+  const navigate = useNavigate();
   return (
     <Swiper
       // install Swiper modules
@@ -32,13 +36,55 @@ export default function HeroSection() {
       onSlideChange={() => console.log("slide change")}
     >
       <SwiperSlide>
-        <HeroBanner source={banner01} />
+        <div className="flex justify-center items-center h-full w-full">
+          <HeroBanner source={banner01} />
+          <div className="absolute flex flex-col justify-center items-center">
+            <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none">
+              Fresh food at your door
+            </h1>
+            <Button
+              label="Order Now"
+              type="primary"
+              onClick={() => {
+                navigate("/product");
+              }}
+            />
+          </div>
+        </div>
       </SwiperSlide>
       <SwiperSlide>
-        <HeroBanner source={banner01} />
+        <div className="flex justify-center items-center h-full w-full">
+          <HeroBanner source={banner01} />
+          <div className="absolute flex flex-col justify-center items-center">
+            <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none">
+              Fresh food at your door
+            </h1>
+            <Button
+              label="Order Now"
+              type="primary"
+              onClick={() => {
+                navigate("/product");
+              }}
+            />
+          </div>
+        </div>
       </SwiperSlide>
       <SwiperSlide>
-        <HeroBanner source={banner01} />
+        <div className="flex justify-center items-center h-full w-full">
+          <HeroBanner source={banner01} />
+          <div className="absolute flex flex-col justify-center items-center">
+            <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none">
+              Fresh food at your door
+            </h1>
+            <Button
+              label="Order Now"
+              type="primary"
+              onClick={() => {
+                navigate("/product");
+              }}
+            />
+          </div>
+        </div>
       </SwiperSlide>
     </Swiper>
   );

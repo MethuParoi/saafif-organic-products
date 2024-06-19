@@ -11,7 +11,7 @@ function Footer() {
           <img className="md:w-60 w-32 h-auto" src={logo} alt="Logo" />
         </div>
 
-        <div className="flex justify-around mx-auto pb-4">
+        <div className="flex flex-col items-start justify-around lg:flex-row lg:justify-around mx-auto pb-4">
           <div className="min-h-[10rem]">
             <ul>
               <li>
@@ -96,7 +96,7 @@ function Footer() {
               </ul>
             </nav>
           </div>
-          <div>
+          <div className="mt-4 lg:mt-0">
             <ul>
               <li>
                 <h3 className="text-xl font-semibold text-primary">
@@ -129,7 +129,7 @@ function Footer() {
               </li>
             </ul>
           </div>
-          <div className=" inline-block">
+          <div className=" inline-block mt-4 lg:mt-0">
             <h3 className="text-xl font-semibold text-primary">In a breif</h3>
             <p className="max-w-[25rem] pt-2">
               Saafif.com is dedicated to enriching lives with the purity of
