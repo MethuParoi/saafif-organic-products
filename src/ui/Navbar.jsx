@@ -48,7 +48,7 @@ function Navbar() {
             }}
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <img src={logo} className="h-20" alt=" Logo" />
+            <img src={logo} className="h-14 lg:h-20" alt=" Logo" />
           </button>
           <div className="flex md:order-2">
             <button
