@@ -20,9 +20,18 @@ import "swiper/css/autoplay";
 import HeroBanner from "./HeroBanner";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import SortContext from "../ContextApi/SortContext";
+import LoadingContext from "../ContextApi/LoadingContext";
+import useProduct from "../services/FakeApi";
 
 export default function HeroSection() {
   const navigate = useNavigate();
+  const { setIsLoading } = useContext(LoadingContext);
+  const { data: ProductDesc } = useProduct(setIsLoading);
+  const { setSortedProducts } = useContext(SortContext);
+  setSortedProducts(ProductDesc);
+
   return (
     <Swiper
       // install Swiper modules

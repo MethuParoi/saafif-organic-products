@@ -143,7 +143,7 @@ function Footer() {
           </div>
         </div>
         <div className="text-center border-t-primaryHover border-t">
-          <p className="text-gray-900 font-medium p-2">
+          <p className="text-gray-900 font-normal lg:font-medium p-2">
             Copyright © saafif.com@2024, All Right Reserved
           </p>
         </div>

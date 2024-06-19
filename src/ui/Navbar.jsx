@@ -23,8 +23,8 @@ function Navbar() {
 
   //reducer hooks
   const totalCartQuantity = useSelector(getTotalCartQunatity);
-  const { isLoading, setIsLoading } = useContext(LoadingContext);
-  const { data: ProductDesc, error } = useProduct(setIsLoading);
+  const { setIsLoading } = useContext(LoadingContext);
+  const { data: ProductDesc } = useProduct(setIsLoading);
 
   //For showing all data at product page on mount
   const { setSortedProducts } = useContext(SortContext);
