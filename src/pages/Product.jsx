@@ -22,11 +22,11 @@ function Product() {
       setSortedProducts(ProductDesc);
     }
   }, [ProductDesc, setSortedProducts]);
-  // lg:relative mb-40 lg:mb-0
-  // lg:absolute md:top-[2rem] md:right-[7rem] lg:right-[10rem] xl:right-[14rem] mt-4 ml-56
+  // relative
+  // absolute top-[1.5rem] right-[1rem] md:top-[1.5rem] md:right-[5rem] xl:right-[7rem] 2xl:right-[12rem]
   return (
-    <div className=" relative">
-      <div className="absolute top-[1.5rem] right-[1rem] md:top-[1.5rem] md:right-[5rem] xl:right-[7rem] 2xl:right-[12rem]">
+    <div className=" relative mx-auto max-w-screen-2xl">
+      <div className="absolute top-[1rem] right-[1rem]">
         <ProductDropdown
           label={"select by category"}
           style={

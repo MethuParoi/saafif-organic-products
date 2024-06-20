@@ -10,9 +10,11 @@ function Home() {
       <HeroSection />
       <div className="py-5 px-12 ">
         <QueryClientProvider client={queryClient}>
-          <HomeRows RowHeading={"Best sellers"} />
-          <HomeRows RowHeading={"Trending items"} />
-          <HomeRows RowHeading={"Hot Deals"} />
+          <div className="mx-auto">
+            <HomeRows RowHeading={"Best sellers"} />
+            <HomeRows RowHeading={"Trending items"} />
+            <HomeRows RowHeading={"Hot Deals"} />
+          </div>
         </QueryClientProvider>
       </div>
     </div>
