@@ -22,13 +22,15 @@ function Product() {
       setSortedProducts(ProductDesc);
     }
   }, [ProductDesc, setSortedProducts]);
+  // lg:relative mb-40 lg:mb-0
+  // lg:absolute md:top-[2rem] md:right-[7rem] lg:right-[10rem] xl:right-[14rem] mt-4 ml-56
   return (
-    <div className="lg:relative mb-40 lg:mb-0">
-      <div className="lg:absolute md:top-[2rem] md:right-[7rem] lg:right-[10rem] xl:right-[14rem] mt-4 ml-56">
+    <div className=" relative">
+      <div className="absolute top-[1.5rem] right-[1rem] md:top-[1.5rem] md:right-[5rem] xl:right-[7rem] 2xl:right-[12rem]">
         <ProductDropdown
           label={"select by category"}
           style={
-            "text-white font-semibold bg-primary hover:bg-primaryHover rounded-lg text-sm px-2 md:px-5 py-2.5 text-center inline-flex items-center "
+            "text-white font-semibold bg-primary hover:bg-primaryHover rounded-lg text-xs md:text-sm px-2 md:px-5 py-2.5 text-center inline-flex items-center "
           }
           category={"products"}
         />

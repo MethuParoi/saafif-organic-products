@@ -147,7 +147,7 @@ function Navbar() {
                   About
                 </button>
               </li>
-              <li className="absolute left-[16rem] top-0">
+              <li className="absolute left-[13rem] md:left-[16rem] top-[1rem] md:top-0">
                 <ProductDropdown
                   label={"Category"}
                   style={

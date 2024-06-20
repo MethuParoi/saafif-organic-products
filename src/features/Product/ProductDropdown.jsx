@@ -45,7 +45,7 @@ function ProductDropdown({ label, style, category }) {
       {isOpen && (
         <div
           id="dropdownHover"
-          className="z-9 text-gray-800  bg-gray-200 divide-y divide-gray-100 rounded-lg shadow w-44 "
+          className="z-9 text-gray-800  bg-gray-200 divide-y divide-gray-100 rounded-lg shadow w-36 md:w-44 "
         >
           <ul
             className="py-2 text-sm text-gray-800 "
@@ -62,7 +62,7 @@ function ProductDropdown({ label, style, category }) {
                     navigate("/product");
                   }
                 }}
-                className="block px-4  py-2 w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
+                className="block px-1 md:px-4 py-2 w-[8rem] md:w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
               >
                 men&apos;s clothing
               </button>
@@ -78,7 +78,7 @@ function ProductDropdown({ label, style, category }) {
                     navigate("/product");
                   }
                 }}
-                className="block px-4 py-2 w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
+                className="block px-1 md:px-4 py-2 w-[8rem] md:w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
               >
                 jewelery
               </button>
@@ -94,7 +94,7 @@ function ProductDropdown({ label, style, category }) {
                     navigate("/product");
                   }
                 }}
-                className="block px-4 py-2 w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
+                className="block px-1 md:px-4 py-2 w-[8rem] md:w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
               >
                 women&apos;s clothing
               </button>
@@ -111,7 +111,7 @@ function ProductDropdown({ label, style, category }) {
                     navigate("/product");
                   }
                 }}
-                className="block px-4 py-2 w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
+                className="block px-1 md:px-4 py-2 w-[8rem] md:w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
               >
                 electronics
               </button>

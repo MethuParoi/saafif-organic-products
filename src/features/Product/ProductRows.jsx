@@ -35,7 +35,7 @@ function ProductRows({ RowHeading }) {
       </div>
       <div className="border-b-2 border-gray-400"></div>
       <div className="py-5">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 mx-auto max-w-screen-2xl">
           {data &&
             ProductDesc.map((product) => (
               <HomeCard
