@@ -10,7 +10,18 @@ const cartSlice = createSlice({
   reducers: {
     addItem(state, action) {
       //payload = newItem
-      state.cart.push(action.payload);
+      const newItem = action.payload;
+      if (
+        typeof newItem.unitPrice !== "number" ||
+        typeof newItem.quantity !== "number"
+      ) {
+        console.error(
+          `Invalid unitPrice or quantity for item with id ${newItem.productId}: unitPrice = ${newItem.unitPrice}, quantity = ${newItem.quantity}`
+        );
+      } else {
+        newItem.totalPrice = newItem.unitPrice * newItem.quantity; // calculate totalPrice here
+        state.cart.push(newItem);
+      }
     },
     deleteItem(state, action) {
       //payload = productId
@@ -21,17 +32,27 @@ const cartSlice = createSlice({
     increaseItemQuantity(state, action) {
       //payload = productId
       const item = state.cart.find((item) => item.productId === action.payload);
-      if (item) {
+      if (
+        item &&
+        typeof item.unitPrice === "number" &&
+        typeof item.quantity === "number"
+      ) {
         item.quantity++;
         item.totalPrice = item.unitPrice * item.quantity;
+        console.log("itotalPrice:", item.totalPrice);
       }
     },
     decreaseItemQuantity(state, action) {
       //payload = productId
       const item = state.cart.find((item) => item.productId === action.payload);
-      if (item) {
+      if (
+        item &&
+        typeof item.unitPrice === "number" &&
+        typeof item.quantity === "number"
+      ) {
         item.quantity--;
         item.totalPrice = item.unitPrice * item.quantity;
+        console.log("dtotalPrice:", item.totalPrice);
       }
 
       if (item.quantity === 0) {
@@ -40,34 +61,7 @@ const cartSlice = createSlice({
         );
       }
     },
-    // increaseItemQuantity(state, action) {
-    //   //payload = productId
-    //   state.cart = state.cart.map((item) => {
-    //     if (item.productId === action.payload) {
-    //       return {
-    //         ...item,
-    //         quantity: item.quantity + 1,
-    //         totalPrice: (item.quantity + 1) * Number(item.unitPrice),
-    //       };
-    //     }
-    //     return item;
-    //   });
-    // },
-    // decreaseItemQuantity(state, action) {
-    //   //payload = productId
-    //   state.cart = state.cart.map((item) => {
-    //     if (item.productId === action.payload) {
-    //       return {
-    //         ...item,
-    //         quantity: item.quantity - 1,
-    //         totalPrice: (item.quantity - 1) * Number(item.unitPrice),
-    //       };
-    //     }
-    //     return item;
-    //   });
 
-    //   state.cart = state.cart.filter((item) => item.quantity !== 0);
-    // },
     clearCart(state) {
       state.cart = [];
     },
@@ -91,23 +85,17 @@ export const getCurrentQuantityById = (id) => (state) =>
   state.cart.cart.find((item) => item.productId === id)?.quantity || 0;
 
 export const getTotalCartPrice = (state) =>
-  state.cart.cart.reduce((sum, item) => sum + item.totalPrice, 0);
-
-//V-2--
-// export const getTotalCartPrice = (state) =>
-//   state.cart.cart.reduce((sum, item) => {
-//     console.log("unitPrice:", item.unitPrice);
-//     console.log("quantity:", item.quantity);
-//     return sum + Number(item.unitPrice) * item.quantity;
-//   }, 0);
-
-//V-3--
-// export const getTotalCartPrice = (state) =>
-//   state.cart.cart.reduce(
-//     (sum, item) => sum + Number(item.unitPrice) * item.quantity,
-//     0
-//   );
+  state.cart.cart.reduce((sum, item) => {
+    if (typeof item.totalPrice === "number") {
+      return sum + item.totalPrice;
+    } else {
+      console.error(
+        `Invalid totalPrice for item with id ${item.productId}: ${item.totalPrice}`
+      );
+      return sum;
+    }
+  }, 0);
 
 export default cartSlice.reducer;
 
-//reselect
+

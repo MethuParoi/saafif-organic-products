@@ -9,17 +9,20 @@ import {
 // import { useEffect } from "react";
 
 function CartItem({ item }) {
-  const { productId, title, quantity, price, totalPrice, img, description } =
-    item;
+  const {
+    productId,
+    title,
+    quantity,
+    unitPrice,
+    totalPrice,
+    img,
+    description,
+  } = item;
 
-  // const dispatch = useDispatch();
   const totalQantity = useSelector(getTotalCartQunatity);
   const currentQuantity = useSelector(getCurrentQuantityById(productId));
 
-  // useEffect(() => {
-  //   // Dispatch the addItem action when the component mounts
-  //   dispatch(addItem({ productId, title, quantity, price, totalPrice }));
-  // }, [dispatch, productId, title, quantity, price, totalPrice]);
+
 
   return (
     <li className="py-4 flex flex-col md:relative">
@@ -37,7 +40,7 @@ function CartItem({ item }) {
           </p>
 
           <p className="text-md text-gray-500 font-semibold">
-            ৳ {price * currentQuantity}
+            ৳ {unitPrice * currentQuantity}
           </p>
 
           <p className="pt-2 pr-5 text-sm text-gray-500 max-w-[50rem]">

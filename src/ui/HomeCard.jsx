@@ -8,12 +8,12 @@ function HomeCard({ img, title, price, id, category, description }) {
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
+    console.log("price", price);
     const newItem = {
       productId: id,
       title,
       quantity: 1,
-      price,
-      totalPrice: price,
+      unitPrice: price,
       img,
       category,
       description,
