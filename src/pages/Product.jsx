@@ -35,7 +35,7 @@ function Product() {
           category={"products"}
         />
       </div>
-      <div className="lg:mx-8">
+      <div className="lg:mr-[8rem]">
         <ProductRows RowHeading={"Products"} />
       </div>
     </div>
