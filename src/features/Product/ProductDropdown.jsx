@@ -16,6 +16,8 @@ function ProductDropdown({ label, style, category }) {
   return (
     <div>
       <button
+        // onClick={() => setIsOpen(!isOpen)}
+        onMouseEnter={() => setIsOpen(!isOpen)}
         onClick={() => setIsOpen(!isOpen)}
         id="dropdownHoverButton"
         data-dropdown-toggle="dropdownHover"
