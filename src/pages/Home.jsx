@@ -8,9 +8,9 @@ function Home() {
   return (
     <div>
       <HeroSection />
-      <div className="py-5 px-12 ">
+      <div className="py-5 px-5 md:pl-8 md:pr-16 ">
         <QueryClientProvider client={queryClient}>
-          <div className="mx-auto">
+          <div className="">
             <HomeRows RowHeading={"Best sellers"} />
             <HomeRows RowHeading={"Trending items"} />
             <HomeRows RowHeading={"Hot Deals"} />
