@@ -2,7 +2,7 @@ import Button from "../ui/Button";
 
 function About() {
   return (
-    <div className="lg:min-h-[55dvh] min-h-[45dvh] py-5 px-10 flex flex-col">
+    <div className="lg:min-h-[55dvh] min-h-[45dvh] py-5 pl-4 md:pl-0 flex flex-col">
       <div>
         <h1 className="lg:text-[5rem] text-[3rem] font-semibold text-primary ">
           SAAFIF

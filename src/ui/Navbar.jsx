@@ -37,11 +37,12 @@ function Navbar() {
       setFilteredProducts(filtered);
     }
   }, [ProductDesc, searchValue]);
+  // pl-4 pr-2 md:px-14
 
   return (
     <>
       <nav className="z-10 border-gray-200 bg-gray-100 sticky top-0">
-        <div className="min-w-screen flex flex-wrap items-center justify-between pl-4 pr-2 md:px-14 py-4">
+        <div className="min-w-screen flex flex-wrap items-center justify-between py-4 pr-2 md:pr-0 container mx-auto">
           <button
             onClick={() => {
               navigate("/home");

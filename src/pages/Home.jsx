@@ -8,7 +8,8 @@ function Home() {
   return (
     <div>
       <HeroSection />
-      <div className="py-5 px-5 md:pl-8 md:pr-16 ">
+      <div className="py-5 px-5 md:px-0 md:pr-[60px]">
+        {/*px-5 md:pl-8 md:pr-16*/}
         <QueryClientProvider client={queryClient}>
           <div className="">
             <HomeRows RowHeading={"Best sellers"} />

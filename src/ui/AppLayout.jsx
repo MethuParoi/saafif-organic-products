@@ -4,10 +4,12 @@ import Footer from "./Footer";
 
 function AppLayout() {
   return (
-    <div className="flex flex-col min-h-screen justify-between">
+    <div className="flex flex-col min-h-screen justify-between ">
       <div>
         <Navbar />
-        <Outlet />
+        <div className="container mx-auto">
+          <Outlet />
+        </div>
       </div>
       <Footer />
     </div>

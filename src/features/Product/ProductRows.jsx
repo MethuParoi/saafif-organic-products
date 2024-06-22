@@ -21,7 +21,7 @@ function ProductRows({ RowHeading }) {
   }, [error]);
 
   return (
-    <div className="py-7 px-7">
+    <div className="py-7 px-5 md:px-0">
       <button
         className="pb-5"
         onClick={() => {
