@@ -1,14 +1,31 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { addItem } from "../features/Cart/cartSlice";
+import {
+  addItem,
+  getCart,
+  getCurrentQuantityById,
+} from "../features/Cart/cartSlice";
 import toast from "react-hot-toast";
+import UpdateItemQuantity from "../features/Cart/UpdateItemQuantity";
+import { useEffect, useState } from "react";
 
 function HomeCard({ img, title, price, id, category, description }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const [showButton, setShowButton] = useState(true);
+  const currentQuantity = useSelector(getCurrentQuantityById(id));
+
+  useEffect(() => {
+    if (currentQuantity === 0) {
+      setShowButton(true);
+    }
+    if (currentQuantity > 0) {
+      setShowButton(false);
+    }
+  }, [currentQuantity]);
+
   const handleAddToCart = () => {
-    console.log("price", price);
     const newItem = {
       productId: id,
       title,
@@ -42,15 +59,22 @@ function HomeCard({ img, title, price, id, category, description }) {
           <span className="text-2xl font-bold text-primary ">
             {`৳ ${price}`}
           </span>
-          <button
-            onClick={() => {
-              handleAddToCart();
-              toast.success("Item added to cart!");
-            }}
-            className="text-white bg-primary hover:bg-primaryHover  font-medium rounded-lg text-sm px-5 py-2.5 text-center  "
-          >
-            Add to cart
-          </button>
+          {showButton ? (
+            <button
+              onClick={() => {
+                handleAddToCart();
+                toast.success("Item added to cart!");
+              }}
+              className="text-white bg-primary hover:bg-primaryHover  font-medium rounded-lg text-sm px-5 py-2.5 text-center  "
+            >
+              Add to cart
+            </button>
+          ) : (
+            <UpdateItemQuantity
+              currentQuantity={currentQuantity}
+              productId={id}
+            />
+          )}
         </div>
       </div>
     </div>

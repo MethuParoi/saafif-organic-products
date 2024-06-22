@@ -39,4 +39,5 @@
     conic-gradient(#0000 30%, #93e506cc);
   -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 10px), #000 0);
   animation: rotate 1.5s infinite linear;
+  z-index: 11;
 }

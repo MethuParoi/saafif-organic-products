@@ -36,7 +36,7 @@ function Button({ label, onClick, type }) {
     return (
       <button
         onClick={onClick}
-        className=" text-white  transition-colors duration-300 rounded-full px-3 py-1 font-bold text-xl bg-primary hover:bg-primaryHover "
+        className=" text-white  transition-colors duration-300 rounded-full h-[2rem] w-[2rem] font-bold text-xl bg-primary hover:bg-primaryHover "
       >
         {label}
       </button>

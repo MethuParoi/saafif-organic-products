@@ -18,7 +18,6 @@ function Cart() {
   const cart = useSelector(getCart);
   const totalCartQuantity = useSelector(getTotalCartQunatity);
   const totalCartPrice = useSelector(getTotalCartPrice);
-  console.log("tcp", totalCartPrice);
 
   if (!cart.length) return <EmptyCart />;
 
