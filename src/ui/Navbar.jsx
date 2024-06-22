@@ -42,16 +42,21 @@ function Navbar() {
   return (
     <>
       <nav className="z-10 border-gray-200 bg-gray-100 sticky top-0">
-        <div className="min-w-screen flex flex-wrap items-center justify-between py-4 pr-2 md:pr-0 container mx-auto">
-          <button
-            onClick={() => {
-              navigate("/home");
-            }}
-            className="flex items-center space-x-3 rtl:space-x-reverse"
-          >
-            <img src={logo} className="h-14 lg:h-20" alt=" Logo" />
-          </button>
-          <div className="flex md:order-2">
+        <div className="min-w-screen flex flex-row flex-wrap items-center justify-between py-4 pr-2 md:pr-0 container mx-auto">
+          {/* logo div */}
+          <div>
+            <button
+              onClick={() => {
+                navigate("/home");
+              }}
+              className="flex items-center space-x-3 rtl:space-x-reverse"
+            >
+              <img src={logo} className="h-14 lg:h-20" alt=" Logo" />
+            </button>
+          </div>
+          {/* logo div */}
+
+          <div className="flex md:order-2 md:hidden">
             <button
               type="button"
               data-collapse-toggle="navbar-search"
@@ -76,56 +81,11 @@ function Navbar() {
               </svg>
               <span className="sr-only">Menu</span>
             </button>
-            <div className="block w-full">
-              <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                <span className="sr-only">Menu</span>
-
-                <span className="sr-only">search icon</span>
-              </div>
-              <div className="flex items-center gap-2 md:gap-0">
-                {/* Cart */}
-                <div
-                  onClick={() => {
-                    navigate("/cart");
-                  }}
-                  className="ml-20 md:ml-0 mr-5 cursor-pointer relative"
-                >
-                  <BsCart4 className="text-4xl hover:text-primary text-primaryHover" />
-                  <div className="text-md bg-secondary text-gray-50 font-bold h-6 w-6 rounded-full flex items-center justify-center absolute top-[25px] left-[-12px]">
-                    {totalCartQuantity}
-                  </div>
-                </div>
-
-                <div className="block">
-                  <input
-                    onChange={(e) => {
-                      setSearchValue(e.target.value);
-                      navigate("/search");
-                      if (!e.target.value) {
-                        navigate("/home");
-                      }
-                    }}
-                    onBlur={() => setSearchValue("")}
-                    type="text"
-                    id="search-navbar"
-                    className="block w-full px-2 h-[40px] ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500  dark:border-gray-600 placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Search..."
-                  />
-                </div>
-                {/* Search Button */}
-                <div
-                  onClick={() => {
-                    navigate("/search");
-                  }}
-                  className="z-10 ml-[-2.5rem] px-3 h-[42px] rounded-r-lg bg-primary hover:bg-primaryHover flex items-center justify-center"
-                >
-                  <IoSearch className="text-xl font-bold" />
-                </div>
-              </div>
-            </div>
           </div>
+
+          {/* Navbar Links */}
           <div
-            className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${
+            className={`lg:pr-[3rem] items-center justify-between w-full md:flex md:w-auto ${
               isExpanded ? "block" : "hidden"
             } block`}
             id="navbar-search"
@@ -169,6 +129,56 @@ function Navbar() {
                 </button>
               </li>
             </ul>
+          </div>
+
+          {/* {Cart & Search} ---------------------------------*/}
+          <div className="">
+            <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+              <span className="sr-only">Menu</span>
+
+              <span className="sr-only">search icon</span>
+            </div>
+
+            <div className="flex items-center gap-2 md:gap-0">
+              {/* Cart */}
+              <div
+                onClick={() => {
+                  navigate("/cart");
+                }}
+                className="ml-20 md:ml-0 mr-5 cursor-pointer relative"
+              >
+                <BsCart4 className="text-4xl hover:text-primary text-primaryHover" />
+                <div className="text-md bg-secondary text-gray-50 font-bold h-6 w-6 rounded-full flex items-center justify-center absolute top-[25px] left-[-12px]">
+                  {totalCartQuantity}
+                </div>
+              </div>
+
+              <div className="block">
+                <input
+                  onChange={(e) => {
+                    setSearchValue(e.target.value);
+                    navigate("/search");
+                    if (!e.target.value) {
+                      navigate("/home");
+                    }
+                  }}
+                  onBlur={() => setSearchValue("")}
+                  type="text"
+                  id="search-navbar"
+                  className="block w-full px-2 h-[40px] ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500  dark:border-gray-600 placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Search..."
+                />
+              </div>
+              {/* Search Button */}
+              <div
+                onClick={() => {
+                  navigate("/search");
+                }}
+                className="z-10 ml-[-2.5rem] px-3 h-[42px] rounded-r-lg bg-primary hover:bg-primaryHover flex items-center justify-center"
+              >
+                <IoSearch className="text-xl font-bold" />
+              </div>
+            </div>
           </div>
         </div>
       </nav>
