@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import useProduct from "../../services/FakeApi";
 import SortContext from "../../ContextApi/SortContext";
 import LoadingContext from "../../ContextApi/LoadingContext";
@@ -12,13 +12,15 @@ function ProductDropdown({ label, style, category }) {
   const { data: ProductDesc, error } = useProduct(setIsLoading);
 
   const navigate = useNavigate();
+  const dropdownRef = useRef(null);
 
   return (
-    <div>
+    <div ref={dropdownRef} onMouseLeave={() => setIsOpen(false)}>
       <button
         // onClick={() => setIsOpen(!isOpen)}
-        onMouseEnter={() => setIsOpen(!isOpen)}
-        onClick={() => setIsOpen(!isOpen)}
+        // onMouseEnter={() => setIsOpen(!isOpen)}
+        // onMouseLeave={() => setIsOpen(!isOpen)}
+        onMouseEnter={() => setIsOpen(true)}
         id="dropdownHoverButton"
         data-dropdown-toggle="dropdownHover"
         data-dropdown-trigger="hover"
