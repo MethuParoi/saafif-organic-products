@@ -6,8 +6,9 @@ import {
   A11y,
   Autoplay,
 } from "swiper/modules";
-import banner01 from "../assets/banner01.jpeg";
-
+import banner13 from "../assets/banner13.jpeg";
+import banner14 from "../assets/banner14.jpeg";
+import banner11 from "../assets/banner11.jpeg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -46,10 +47,29 @@ export default function HeroSection() {
     >
       <SwiperSlide>
         <div className="flex justify-center items-center h-full w-full">
-          <HeroBanner source={banner01} />
-          <div className="absolute flex flex-col justify-center items-center">
+          <HeroBanner source={banner13} />
+          <div className="absolute flex flex-col justify-center items-center lg:inline lg:pl-[50rem]">
             <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none">
               Fresh food at your door
+            </h1>
+            <div className="lg:pl-[20rem]">
+              <Button
+                label="Order Now"
+                type="primary"
+                onClick={() => {
+                  navigate("/product");
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className="flex justify-center items-center h-full w-full ">
+          <HeroBanner source={banner11} />
+          <div className="absolute flex flex-col justify-center items-center lg:inline lg:pr-[50rem]">
+            <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none">
+              Order organic honey
             </h1>
             <Button
               label="Order Now"
@@ -63,27 +83,10 @@ export default function HeroSection() {
       </SwiperSlide>
       <SwiperSlide>
         <div className="flex justify-center items-center h-full w-full">
-          <HeroBanner source={banner01} />
-          <div className="absolute flex flex-col justify-center items-center">
+          <HeroBanner source={banner14} />
+          <div className="absolute flex flex-col justify-center items-center  lg:inline lg:pr-[65rem]">
             <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none">
-              Fresh food at your door
-            </h1>
-            <Button
-              label="Order Now"
-              type="primary"
-              onClick={() => {
-                navigate("/product");
-              }}
-            />
-          </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="flex justify-center items-center h-full w-full">
-          <HeroBanner source={banner01} />
-          <div className="absolute flex flex-col justify-center items-center">
-            <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none">
-              Fresh food at your door
+              Order dry fruits
             </h1>
             <Button
               label="Order Now"

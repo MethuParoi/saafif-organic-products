@@ -66,7 +66,7 @@ function ProductDropdown({ label, style, category }) {
                 }}
                 className="block px-1 md:px-4 py-2 w-[8rem] md:w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
               >
-                men&apos;s clothing
+                Men&apos;s Clothing
               </button>
             </li>
             <li className="hover:bg-primaryHover hover:text-white">
@@ -82,7 +82,7 @@ function ProductDropdown({ label, style, category }) {
                 }}
                 className="block px-1 md:px-4 py-2 w-[8rem] md:w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
               >
-                jewelery
+                Jewelery
               </button>
             </li>
             <li className="hover:bg-primaryHover hover:text-white">
@@ -98,7 +98,7 @@ function ProductDropdown({ label, style, category }) {
                 }}
                 className="block px-1 md:px-4 py-2 w-[8rem] md:w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
               >
-                women&apos;s clothing
+                Women&apos;s Clothing
               </button>
             </li>
 
@@ -115,7 +115,7 @@ function ProductDropdown({ label, style, category }) {
                 }}
                 className="block px-1 md:px-4 py-2 w-[8rem] md:w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
               >
-                electronics
+                Electronics
               </button>
             </li>
           </ul>
