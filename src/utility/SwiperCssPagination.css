@@ -1,0 +1,8 @@
+/* Customizing the color of all pagination bullets */
+.swiper-pagination-bullet {
+    background-color: #b3db21; 
+}
+/* Customizing the color of the active pagination bullet */
+.swiper-pagination-bullet-active {
+    background-color: #c7fd00; 
+}
