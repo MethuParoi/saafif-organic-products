@@ -55,13 +55,13 @@ function ProductDropdown({ label, style, category }) {
             <li className="hover:bg-primaryHover hover:text-white ">
               <button
                 onClick={() => {
+                  if (category === "category") {
+                    navigate("/product");
+                  }
                   const sorted = ProductDesc.filter(
                     (item) => item.category === "men's clothing"
                   );
                   setSortedProducts(sorted);
-                  if (category === "category") {
-                    navigate("/product");
-                  }
                 }}
                 className="block px-1 md:px-4 py-2 w-[8rem] md:w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
               >
@@ -76,6 +76,7 @@ function ProductDropdown({ label, style, category }) {
                   );
                   setSortedProducts(sorted);
                   if (category === "category") {
+                    setSortedProducts(sorted);
                     navigate("/product");
                   }
                 }}
@@ -92,6 +93,7 @@ function ProductDropdown({ label, style, category }) {
                   );
                   setSortedProducts(sorted);
                   if (category === "category") {
+                    setSortedProducts(sorted);
                     navigate("/product");
                   }
                 }}
@@ -109,6 +111,7 @@ function ProductDropdown({ label, style, category }) {
                   );
                   setSortedProducts(sorted);
                   if (category === "category") {
+                    setSortedProducts(sorted);
                     navigate("/product");
                   }
                 }}

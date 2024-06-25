@@ -4,6 +4,7 @@ import ProductRows from "../features/Product/ProductRows";
 import SortContext from "../ContextApi/SortContext";
 import LoadingContext from "../ContextApi/LoadingContext";
 import useProduct from "../services/FakeApi";
+import Sort from "../features/Product/Sort/Sort";
 
 function Product() {
   const { setIsLoading } = useContext(LoadingContext);
@@ -27,13 +28,14 @@ function Product() {
   return (
     <div className=" relative mx-auto max-w-screen-2xl">
       <div className="absolute top-[1rem] right-[1rem]">
-        <ProductDropdown
+        {/* <ProductDropdown
           label={"select by category"}
           style={
-            "text-white font-semibold bg-primary hover:bg-primaryHover rounded-lg text-xs md:text-sm px-2 md:px-5 py-2.5 text-center inline-flex items-center "
+            "text-white font-semibold bg-primary hover:bg-primaryHover rounded-lg text-xs md:text-sm px-2 md:px-5 py-2.5 text-center inline-flex items-center"
           }
           category={"products"}
-        />
+        /> */}
+        <Sort />
       </div>
       <div className="lg:mr-[8rem]">
         <ProductRows RowHeading={"Products"} />
