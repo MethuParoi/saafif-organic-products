@@ -41,7 +41,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="z-10 border-gray-200 bg-gray-100 sticky top-0">
+      <nav className="z-20 border-gray-200 bg-gray-100 sticky top-0">
         <div className="min-w-screen flex flex-row flex-wrap items-center justify-between py-4 pr-2 md:pr-0 container mx-auto">
           {/* logo div */}
           <div>

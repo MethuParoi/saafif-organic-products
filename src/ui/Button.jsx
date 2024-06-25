@@ -3,7 +3,7 @@ function Button({ label, onClick, type }) {
     return (
       <button
         onClick={onClick}
-        className=" text-white text-xl lg:text-2xl font-semibold bg-primary hover:bg-primaryHover px-5 lg:px-10 py-2 lg:py-4 rounded-3xl mt-7"
+        className=" text-white text-xl lg:text-2xl font-semibold bg-primary hover:bg-primaryHover px-5 lg:px-10 py-2 lg:py-4 rounded-3xl mt-7 shadow-lg shadow-gray-700"
       >
         {label}
       </button>

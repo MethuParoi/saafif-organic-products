@@ -46,7 +46,7 @@ export default function HeroSection() {
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         spaceBetween={50}
         slidesPerView={1}
-        // autoplay={{ delay: 3000 }}
+        autoplay={{ delay: 3000 }}
         navigation={{
           prevEl: navigationPrevRef.current,
           nextEl: navigationNextRef.current,
@@ -66,8 +66,8 @@ export default function HeroSection() {
         <SwiperSlide>
           <div className="flex justify-center items-center h-full w-full">
             <HeroBanner source={banner13} />
-            <div className="absolute flex flex-col justify-center items-center lg:inline lg:pl-[50rem]">
-              <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none">
+            <div className="absolute flex flex-col justify-center items-center lg:inline lg:pl-[50rem] ">
+              <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none bg-gradient-to-r from-gray-700 to-transparent rounded-lg px-1 py-1">
                 Fresh food at your door
               </h1>
               <div className="lg:pl-[20rem]">
@@ -82,14 +82,21 @@ export default function HeroSection() {
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        {/*Need fix*/}
+        {/* <SwiperSlide>
           <div className="flex justify-center items-center h-full w-full ">
             <HeroBanner source={banner11} />
             <div className="absolute flex flex-col justify-center items-center lg:inline lg:pr-[50rem]">
-              <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none">
-                Order organic honey
-              </h1>
+              <div className="backdrop-blur-lg rounded-lg">
+                <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none ">
+                  <span className="shadow-lg shadow-gray-700">
+                    Order organic honey
+                  </span>
+                </h1>
+              </div>
+
               <Button
+                className="bg-gradient-to-rto-transparent backdrop-blur-lg rounded-lg"
                 label="Order Now"
                 type="primary"
                 onClick={() => {
@@ -103,9 +110,48 @@ export default function HeroSection() {
           <div className="flex justify-center items-center h-full w-full">
             <HeroBanner source={banner14} />
             <div className="absolute flex flex-col justify-center items-center  lg:inline lg:pr-[60rem]">
-              <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none">
+              <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none bg-gradient-to-r to-transparent backdrop-blur-sm rounded-lg">
                 Order dry fruits
               </h1>
+              <Button
+                className="bg-gradient-to-r to-transparent backdrop-blur-sm rounded-lg"
+                label="Order Now"
+                type="primary"
+                onClick={() => {
+                  navigate("/product");
+                }}
+              />
+            </div>
+          </div>
+        </SwiperSlide> */}
+        <SwiperSlide>
+          <div className="flex justify-center items-center h-full w-full">
+            <HeroBanner source={banner11} />
+            <div className="absolute flex flex-col justify-center items-center  lg:inline lg:pr-[50rem]">
+              <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none bg-gradient-to-r from-gray-700 to-transparent backdrop-blur-sm rounded-lg px-1 py-1">
+                Order organic honey
+              </h1>
+              <div className="">
+                <Button
+                  className=""
+                  label="Order Now"
+                  type="primary"
+                  onClick={() => {
+                    navigate("/product");
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="flex justify-center items-center h-full w-full">
+            <HeroBanner source={banner14} />
+            <div className="absolute flex flex-col justify-center items-center lg:inline lg:pr-[60rem]">
+              <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none bg-gradient-to-r from-gray-700 to-gray-400 backdrop-blur-lg rounded-lg px-1 py-1">
+                Order dry fruits
+              </h1>
+
               <Button
                 label="Order Now"
                 type="primary"
@@ -120,13 +166,13 @@ export default function HeroSection() {
 
       <button
         ref={navigationPrevRef}
-        className="text-primary hover:primary lg:text-[3rem] text-[1.8rem] absolute left-2 top-1/2 z-10"
+        className="text-primary hover:text-primaryHover hover:cursor-pointer lg:text-[3rem] text-[1.8rem] absolute left-2 top-1/2 z-10"
       >
         <FaArrowCircleLeft />
       </button>
       <button
         ref={navigationNextRef}
-        className="text-primary hover:primary lg:text-[3rem] text-[1.8rem] absolute right-2 top-1/2 z-10"
+        className="text-primary hover:text-primaryHover hover:cursor-pointer lg:text-[3rem] text-[1.8rem] absolute right-2 top-1/2 z-10"
       >
         <FaArrowCircleRight />
       </button>
