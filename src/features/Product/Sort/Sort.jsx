@@ -3,6 +3,8 @@ import SortButton from "./SortButton";
 import SortContext from "../../../ContextApi/SortContext";
 import LoadingContext from "../../../ContextApi/LoadingContext";
 import useProduct from "../../../services/FakeApi";
+import { useDispatch } from "react-redux";
+import { setRowHeading } from "../productSlice";
 
 function Sort() {
   const { setSortedProducts } = useContext(SortContext);
@@ -16,6 +18,13 @@ function Sort() {
     setActiveLabel(label);
   };
 
+  //Reducers for setting row heading
+  const dispatch = useDispatch();
+
+  const updateRowHeading = (newHeading) => {
+    dispatch(setRowHeading(newHeading));
+  };
+
   return (
     <div className=" bg-gray-50 shadow-sm rounded-sm p-1 flex gap-1">
       <SortButton
@@ -27,6 +36,7 @@ function Sort() {
           );
           setSortedProducts(sorted);
           handleButtonClick("Men's Clothing");
+          updateRowHeading("Men's Clothing");
         }}
       />
       <SortButton
@@ -38,6 +48,7 @@ function Sort() {
           );
           setSortedProducts(sorted);
           handleButtonClick("jewelery");
+          updateRowHeading("Jewelery");
         }}
       />
       <SortButton
@@ -49,6 +60,7 @@ function Sort() {
           );
           setSortedProducts(sorted);
           handleButtonClick("women's clothing");
+          updateRowHeading("Women's Clothing");
         }}
       />
       <SortButton
@@ -60,6 +72,7 @@ function Sort() {
           );
           setSortedProducts(sorted);
           handleButtonClick("electronics");
+          updateRowHeading("Electronics");
         }}
       />
     </div>

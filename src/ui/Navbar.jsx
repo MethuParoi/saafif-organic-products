@@ -3,13 +3,14 @@ import logo from "../assets/logo.png";
 import { useContext, useEffect, useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import { BsCart4 } from "react-icons/bs";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getTotalCartQunatity } from "../features/Cart/cartSlice";
 import useProduct from "../services/FakeApi";
 import LoadingContext from "../ContextApi/LoadingContext";
 import SearchContext from "../ContextApi/SearchContext";
 import SortContext from "../ContextApi/SortContext";
 import ProductDropdown from "../features/Product/ProductDropdown";
+import { setRowHeading } from "../features/Product/productSlice";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -37,7 +38,13 @@ function Navbar() {
       setFilteredProducts(filtered);
     }
   }, [ProductDesc, searchValue]);
-  // pl-4 pr-2 md:px-14
+
+  //Reducers for setting row heading
+  const dispatch = useDispatch();
+
+  const updateRowHeading = (newHeading) => {
+    dispatch(setRowHeading(newHeading));
+  };
 
   return (
     <>
@@ -122,6 +129,7 @@ function Navbar() {
                   onClick={() => {
                     navigate("/product");
                     setSortedProducts(ProductDesc);
+                    updateRowHeading("Products");
                   }}
                   className="block py-2 px-3 text-gray-900 rounded md:p-0 hover:text-primary text-xl border-gray-700"
                 >

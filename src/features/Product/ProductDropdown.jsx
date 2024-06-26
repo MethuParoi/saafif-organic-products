@@ -3,13 +3,22 @@ import useProduct from "../../services/FakeApi";
 import SortContext from "../../ContextApi/SortContext";
 import LoadingContext from "../../ContextApi/LoadingContext";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setRowHeading } from "./productSlice";
 
 function ProductDropdown({ label, style, category }) {
   const [isOpen, setIsOpen] = useState(false);
   const { setSortedProducts } = useContext(SortContext);
 
-  const { isLoading, setIsLoading } = useContext(LoadingContext);
-  const { data: ProductDesc, error } = useProduct(setIsLoading);
+  const { setIsLoading } = useContext(LoadingContext);
+  const { data: ProductDesc } = useProduct(setIsLoading);
+
+  //Reducers for setting row heading
+  const dispatch = useDispatch();
+
+  const updateRowHeading = (newHeading) => {
+    dispatch(setRowHeading(newHeading));
+  };
 
   const navigate = useNavigate();
   const dropdownRef = useRef(null);
@@ -62,6 +71,7 @@ function ProductDropdown({ label, style, category }) {
                     (item) => item.category === "men's clothing"
                   );
                   setSortedProducts(sorted);
+                  updateRowHeading("Men's Clothing");
                 }}
                 className="block px-1 md:px-4 py-2 w-[8rem] md:w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
               >
@@ -75,6 +85,7 @@ function ProductDropdown({ label, style, category }) {
                     (item) => item.category === "jewelery"
                   );
                   setSortedProducts(sorted);
+                  updateRowHeading("Jewelery");
                   if (category === "category") {
                     setSortedProducts(sorted);
                     navigate("/product");
@@ -92,6 +103,7 @@ function ProductDropdown({ label, style, category }) {
                     (item) => item.category === "women's clothing"
                   );
                   setSortedProducts(sorted);
+                  updateRowHeading("Women's Clothing");
                   if (category === "category") {
                     setSortedProducts(sorted);
                     navigate("/product");
@@ -110,6 +122,7 @@ function ProductDropdown({ label, style, category }) {
                     (item) => item.category === "electronics"
                   );
                   setSortedProducts(sorted);
+                  updateRowHeading("Electronics");
                   if (category === "category") {
                     setSortedProducts(sorted);
                     navigate("/product");
