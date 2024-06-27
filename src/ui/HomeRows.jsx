@@ -5,7 +5,7 @@ import LoadingContext from "../ContextApi/LoadingContext";
 import { useNavigate } from "react-router-dom";
 
 function HomeRows({ RowHeading }) {
-  const { isLoading, setIsLoading } = useContext(LoadingContext);
+  const { setIsLoading } = useContext(LoadingContext);
   const { data: ProductDesc, error } = useProduct(setIsLoading);
 
   const navigate = useNavigate();
