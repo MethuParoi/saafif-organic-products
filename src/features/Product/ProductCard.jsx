@@ -34,7 +34,7 @@ function ProductCard({ img, title, price, id, category, description }) {
     dispatch(addItem(newItem));
   };
   return (
-    <div className="my-4 pb-4 md:w-[18rem] md:min-h-[21rem] border rounded-lg bg-gray-50 border-transparent shadow-2xl">
+    <div className="my-4 pb-4 md:w-[18rem] md:min-h-[21rem] border rounded-lg bg-primary border-transparent shadow-2xl">
       <div onClick={navigate}>
         <img
           className="rounded-t-lg min-h-[14rem] max-h-[14rem] w-full object-contain object-center border-2 border-gray-400"
