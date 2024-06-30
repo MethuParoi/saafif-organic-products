@@ -27,6 +27,9 @@ function ProductDropdown({ label, style, category }) {
     <div ref={dropdownRef} onMouseLeave={() => setIsOpen(false)}>
       <button
         onMouseEnter={() => setIsOpen(true)}
+        onClick={() => {
+          setIsOpen(!isOpen);
+        }}
         id="dropdownHoverButton"
         data-dropdown-toggle="dropdownHover"
         data-dropdown-trigger="hover"
@@ -55,10 +58,10 @@ function ProductDropdown({ label, style, category }) {
       {isOpen && (
         <div
           id="dropdownHover"
-          className="z-9 text-gray-800  bg-gray-200 divide-y divide-gray-100 rounded-lg shadow w-36 md:w-44 "
+          className="z-50 text-gray-800  bg-gray-200 divide-y divide-gray-100 rounded-lg shadow w-36 md:w-44 "
         >
           <ul
-            className="py-2 text-sm text-gray-800 "
+            className="z-50 py-2 text-sm text-gray-800 "
             aria-labelledby="select by category"
           >
             <li className="hover:bg-primaryHover hover:text-white ">

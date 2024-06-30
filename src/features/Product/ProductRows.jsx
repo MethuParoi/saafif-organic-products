@@ -33,8 +33,8 @@ function ProductRows({ RowHeading }) {
         &larr; Back to home
       </button>
 
-      <div className="lg:flex">
-        <div className="lg:max-w-[70rem]">
+      <div className="lg:flex relative ">
+        <div className="lg:max-w-[70rem] ">
           <div className="flex justify-between">
             <h2 className="text-2xl pb-2 font-semibold ">{RowHeading}</h2>
           </div>
@@ -57,7 +57,7 @@ function ProductRows({ RowHeading }) {
           </div>
         </div>
 
-        <div>
+        <div className="lg:ml-[12rem] lg:pl-[3rem] min-w-[16rem] lg:min-w-[20rem] h-[35rem] border-l-2 border-gray-400">
           <FrequentlyBoughtProduct />
         </div>
       </div>

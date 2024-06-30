@@ -182,7 +182,7 @@ function Navbar() {
                 onClick={() => {
                   navigate("/search");
                 }}
-                className="z-10 ml-[-2.5rem] px-3 h-[42px] rounded-r-lg bg-primary hover:bg-primaryHover flex items-center justify-center"
+                className="z-9 ml-[-2.5rem] px-3 h-[42px] rounded-r-lg bg-primary hover:bg-primaryHover flex items-center justify-center"
               >
                 <IoSearch className="text-xl font-bold" />
               </div>

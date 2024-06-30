@@ -32,7 +32,7 @@ function Product() {
       <div className=" md:absolute md:top-[1rem] md:right-[1rem]">
         <Sort />
       </div>
-      <div className="lg:mr-[8rem]">
+      <div className="lg:pt-2 lg:mr-[8rem]">
         <ProductRows RowHeading={rowHeading ? rowHeading : "Products"} />
       </div>
     </div>
