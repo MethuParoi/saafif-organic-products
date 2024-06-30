@@ -28,8 +28,8 @@ function Product() {
   }, [ProductDesc, setSortedProducts]);
 
   return (
-    <div className=" relative mx-auto max-w-screen-2xl">
-      <div className="absolute top-[1rem] right-[1rem]">
+    <div className=" md:relative mx-auto max-w-screen-2xl">
+      <div className=" md:absolute md:top-[1rem] md:right-[1rem]">
         <Sort />
       </div>
       <div className="lg:mr-[8rem]">

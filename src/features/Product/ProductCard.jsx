@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addItem, getCart, getCurrentQuantityById } from "../Cart/cartSlice";
 import toast from "react-hot-toast";
-import UpdateItemQuantity from "../features/Cart/UpdateItemQuantity";
+import UpdateItemQuantity from "../Cart/UpdateItemQuantity";
 import { useEffect, useState } from "react";
 
 function ProductCard({ img, title, price, id, category, description }) {
@@ -34,7 +34,7 @@ function ProductCard({ img, title, price, id, category, description }) {
     dispatch(addItem(newItem));
   };
   return (
-    <div className="my-4 pb-4 md:w-[18rem] md:min-h-[21rem] border rounded-lg bg-primary border-transparent shadow-2xl">
+    <div className="my-4 pb-4 md:w-[15rem] md:min-h-[21rem] border rounded-lg bg-gray-50 border-transparent shadow-2xl">
       <div onClick={navigate}>
         <img
           className="rounded-t-lg min-h-[14rem] max-h-[14rem] w-full object-contain object-center border-2 border-gray-400"
@@ -42,7 +42,7 @@ function ProductCard({ img, title, price, id, category, description }) {
           alt="product image"
         />
       </div>
-      <div className="px-5">
+      <div className="px-2">
         <div className="pt-2">
           <button>
             <h5 className="text-lg font-semibold tracking-tight text-gray-700 overflow-hidden overflow-ellipsis h-[3em]">

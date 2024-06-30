@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import ProductCard from "./ProductCard";
-import LoadingContext from "../../ContextApi/LoadingContext";
-import useProduct from "../../services/FakeApi";
+import ProductCard from "../ProductCard";
+import LoadingContext from "../../../ContextApi/LoadingContext";
+import useProduct from "../../../services/FakeApi";
 
 function HotProducts() {
   const { setIsLoading } = useContext(LoadingContext);
