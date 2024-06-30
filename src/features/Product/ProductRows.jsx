@@ -57,7 +57,7 @@ function ProductRows({ RowHeading }) {
           </div>
         </div>
 
-        <div className="lg:ml-[12rem] lg:pl-[3rem] min-w-[16rem] lg:min-w-[20rem] h-[35rem] border-l-2 border-gray-400">
+        <div className="lg:ml-[12rem] lg:pl-[3rem] min-w-[16rem] lg:min-w-[20rem] h-[35rem] md:border-l-2 border-gray-400">
           <FrequentlyBoughtProduct />
         </div>
       </div>

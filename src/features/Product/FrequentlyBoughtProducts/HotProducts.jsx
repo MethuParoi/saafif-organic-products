@@ -35,15 +35,15 @@ function HotProducts({ img, title, price, id, category, description }) {
   };
 
   return (
-    <div className="flex my-4  md:w-[25rem] min-h-[8rem] md:h-[9rem] border rounded-lg bg-gray-50 border-transparent shadow-2xl">
-      <div className="lg:w-[10rem]" onClick={navigate}>
+    <div className="flex my-4  md:w-[25rem] h-[7rem] md:h-[9rem] border rounded-lg bg-gray-50 border-transparent shadow-2xl">
+      <div className="lg:w-[10rem] w-[7rem]" onClick={navigate}>
         <img
-          className="rounded-l-lg md:min-h-[9rem] min-h-[8rem] max-h-[8rem] md:max-h-[9rem] w-full object-contain object-center border-2 border-gray-400"
+          className="rounded-l-lg md:min-h-[9rem] min-h-[7rem] max-h-[7rem] md:max-h-[9rem] w-full object-contain object-center border-2 border-gray-400"
           src={img}
           alt="product image"
         />
       </div>
-      <div className="md:pl-6 pl-8 w-[15rem] md:w-[17rem]">
+      <div className="md:pl-6 pl-4 pr-1 w-[15rem] md:w-[17rem]">
         <div className="pt-2">
           <button>
             <h5 className="md:text-lg text-start text-md font-semibold tracking-tight text-gray-700 overflow-hidden overflow-ellipsis h-[3em]">
@@ -52,7 +52,7 @@ function HotProducts({ img, title, price, id, category, description }) {
           </button>
         </div>
 
-        <div className="flex items-center justify-around pt-8">
+        <div className="flex items-center justify-around md:pt-8 pt-2">
           <span className="md:text-2xl text-xl font-bold text-primary ">
             {`৳ ${price}`}
           </span>
