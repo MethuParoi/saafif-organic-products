@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import HomeCard from "./HomeCard";
-import useProduct from "../services/FakeApi";
+import useProduct from "../services/apiProducts";
 import LoadingContext from "../ContextApi/LoadingContext";
 import { useNavigate } from "react-router-dom";
 
 function HomeRows({ RowHeading }) {
-  const { setIsLoading } = useContext(LoadingContext);
-  const { data: ProductDesc, error } = useProduct(setIsLoading);
+  // const { setIsLoading } = useContext(LoadingContext);
+  const { data: ProductDesc, error } = useProduct();
 
   const navigate = useNavigate();
 
