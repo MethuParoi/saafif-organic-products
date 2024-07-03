@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import ProductCard from "../ProductCard";
-import LoadingContext from "../../../ContextApi/LoadingContext";
-import useProduct from "../../../services/FakeApi";
+// import LoadingContext from "../../../ContextApi/LoadingContext";
+import useProduct from "../../../services/apiProducts";
 import HotProducts from "./HotProducts";
 
 function FrequentlyBoughtProduct() {
-  const { setIsLoading } = useContext(LoadingContext);
-  const { data: ProductDesc } = useProduct(setIsLoading);
+  //   const { setIsLoading } = useContext(LoadingContext);
+  const { data: ProductDesc } = useProduct();
   return (
     <div>
       <div>

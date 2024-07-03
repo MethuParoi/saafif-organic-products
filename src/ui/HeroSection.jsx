@@ -24,14 +24,14 @@ import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 import { useContext, useRef } from "react";
 import SortContext from "../ContextApi/SortContext";
-import LoadingContext from "../ContextApi/LoadingContext";
-import useProduct from "../services/FakeApi";
+// import LoadingContext from "../ContextApi/LoadingContext";
+import useProduct from "../services/apiProducts";
 import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 
 export default function HeroSection() {
   const navigate = useNavigate();
-  const { setIsLoading } = useContext(LoadingContext);
-  const { data: ProductDesc } = useProduct(setIsLoading);
+  // const { setIsLoading } = useContext(LoadingContext);
+  const { data: ProductDesc } = useProduct();
   const { setSortedProducts } = useContext(SortContext);
   setSortedProducts(ProductDesc);
 

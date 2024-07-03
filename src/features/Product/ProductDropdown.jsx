@@ -1,7 +1,7 @@
 import { useContext, useRef, useState } from "react";
-import useProduct from "../../services/FakeApi";
+import useProduct from "../../services/apiProducts";
 import SortContext from "../../ContextApi/SortContext";
-import LoadingContext from "../../ContextApi/LoadingContext";
+// import LoadingContext from "../../ContextApi/LoadingContext";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setRowHeading } from "./productSlice";
@@ -10,8 +10,8 @@ function ProductDropdown({ label, style, category }) {
   const [isOpen, setIsOpen] = useState(false);
   const { setSortedProducts } = useContext(SortContext);
 
-  const { setIsLoading } = useContext(LoadingContext);
-  const { data: ProductDesc } = useProduct(setIsLoading);
+  // const { setIsLoading } = useContext(LoadingContext);
+  const { data: ProductDesc } = useProduct();
 
   //Reducers for setting row heading
   const dispatch = useDispatch();

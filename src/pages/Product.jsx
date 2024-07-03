@@ -1,14 +1,14 @@
 import { useContext, useEffect } from "react";
 import ProductRows from "../features/Product/ProductRows";
 import SortContext from "../ContextApi/SortContext";
-import LoadingContext from "../ContextApi/LoadingContext";
-import useProduct from "../services/FakeApi";
+// import LoadingContext from "../ContextApi/LoadingContext";
+import useProduct from "../services/apiProducts";
 import Sort from "../features/Product/Sort/Sort";
 import { useSelector } from "react-redux";
 
 function Product() {
-  const { setIsLoading } = useContext(LoadingContext);
-  const { data: ProductDesc } = useProduct(setIsLoading);
+  // const { setIsLoading } = useContext(LoadingContext);
+  const { data: ProductDesc } = useProduct();
 
   //For showing all data at product page on mount
   const { setSortedProducts } = useContext(SortContext);

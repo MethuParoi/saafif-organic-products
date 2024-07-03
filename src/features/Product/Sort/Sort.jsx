@@ -1,16 +1,16 @@
 import { useContext, useState } from "react";
 import SortButton from "./SortButton";
 import SortContext from "../../../ContextApi/SortContext";
-import LoadingContext from "../../../ContextApi/LoadingContext";
-import useProduct from "../../../services/FakeApi";
+// import LoadingContext from "../../../ContextApi/LoadingContext";
+import useProduct from "../../../services/apiProducts";
 import { useDispatch } from "react-redux";
 import { setRowHeading } from "../productSlice";
 
 function Sort() {
   const { setSortedProducts } = useContext(SortContext);
 
-  const { setIsLoading } = useContext(LoadingContext);
-  const { data: ProductDesc } = useProduct(setIsLoading);
+  // const { setIsLoading } = useContext(LoadingContext);
+  const { data: ProductDesc } = useProduct();
 
   const [activeLabel, setActiveLabel] = useState("");
 

@@ -5,8 +5,8 @@ import { IoSearch } from "react-icons/io5";
 import { BsCart4 } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { getTotalCartQunatity } from "../features/Cart/cartSlice";
-import useProduct from "../services/FakeApi";
-import LoadingContext from "../ContextApi/LoadingContext";
+import useProduct from "../services/apiProducts";
+// import LoadingContext from "../ContextApi/LoadingContext";
 import SearchContext from "../ContextApi/SearchContext";
 import SortContext from "../ContextApi/SortContext";
 import ProductDropdown from "../features/Product/ProductDropdown";
@@ -24,8 +24,8 @@ function Navbar() {
 
   //reducer hooks
   const totalCartQuantity = useSelector(getTotalCartQunatity);
-  const { setIsLoading } = useContext(LoadingContext);
-  const { data: ProductDesc } = useProduct(setIsLoading);
+  // const { setIsLoading } = useContext(LoadingContext);
+  const { data: ProductDesc } = useProduct();
 
   //For showing all data at product page on mount
   const { setSortedProducts } = useContext(SortContext);
