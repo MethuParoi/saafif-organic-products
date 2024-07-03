@@ -1,40 +1,3 @@
-// import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-// import "./App.css";
-// import AppLayout from "./ui/AppLayout";
-// import Home from "./pages/Home";
-// import Category from "./pages/Category";
-// import Product from "./pages/Product";
-// import About from "./pages/About";
-// import PageNotFound from "./ui/PageNotFound";
-// import LoadingContext from "./ContextApi/LoadingContext";
-// import { useState } from "react";
-// import Spinner from "./utility/Spinner";
-
-// function App() {
-//   const [isLoading, setIsLoading] = useState(false);
-
-//   return (
-//     <LoadingContext.Provider value={{ isLoading, setIsLoading }}>
-//       {console.log(`isLoading: ${isLoading}`)}
-//       {isLoading && <Spinner />}
-//       <BrowserRouter>
-//         <Routes>
-//           <Route element={<AppLayout />}>
-//             <Route index element={<Navigate replace to="home" />} />
-//             <Route path="/home" element={<Home />} />
-//             <Route path="/category" element={<Category />} />
-//             <Route path="/product" element={<Product />} />
-//             <Route path="/about" element={<About />} />
-//             <Route path="/*" element={<PageNotFound />} />
-//           </Route>
-//         </Routes>
-//       </BrowserRouter>
-//     </LoadingContext.Provider>
-//   );
-// }
-
-// export default App;
-
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import AppLayout from "./ui/AppLayout";
@@ -43,11 +6,10 @@ import Category from "./pages/Category";
 import Product from "./pages/Product";
 import About from "./pages/About";
 import PageNotFound from "./ui/PageNotFound";
-import LoadingContext from "./ContextApi/LoadingContext";
 import { useState } from "react";
 import Spinner from "./utility/Spinner";
 import Cart from "./features/Cart/Cart";
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { QueryClient, QueryClientProvider } from "react-query";
 import Search from "./features/Search/Search";
 import SearchContext from "./ContextApi/SearchContext";
@@ -72,12 +34,7 @@ function ProductsComponent() {
   if (error) {
     // Optionally handle the error state, e.g., display an error message
     console.error(error);
-    return (
-      <div className="flex justify-center items-center text-2xl font-semibold text-red-400">
-        Error Loading Products!
-        <br /> Check Your Internet Connection.
-      </div>
-    );
+    toast.error("Error Loading Products!");
   }
 
   // If data is loaded and there's no error, you might want to display the products or return null if nothing is to be displayed
@@ -86,8 +43,6 @@ function ProductsComponent() {
 }
 
 function App() {
-  // const [isLoading, setIsLoading] = useState(true);
-  // const isLoading = useProducts();
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [sortedProducts, setSortedProducts] = useState([]);
 
@@ -97,8 +52,6 @@ function App() {
         <SearchContext.Provider
           value={{ filteredProducts, setFilteredProducts }}
         >
-          {/* <LoadingContext.Provider value={{ isLoading, setIsLoading }}> */}
-          {/* {isLoading && <Spinner />} */}
           <BrowserRouter>
             <Routes>
               <Route element={<AppLayout />}>
@@ -134,7 +87,6 @@ function App() {
               },
             }}
           />
-          {/* </LoadingContext.Provider> */}
         </SearchContext.Provider>
       </SortContext.Provider>
     </QueryClientProvider>

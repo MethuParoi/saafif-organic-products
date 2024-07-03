@@ -9,7 +9,15 @@ import toast from "react-hot-toast";
 import UpdateItemQuantity from "../features/Cart/UpdateItemQuantity";
 import { useEffect, useState } from "react";
 
-function HomeCard({ img, title, price, id, category, description }) {
+function HomeCard({
+  img,
+  title,
+  price,
+  quantity,
+  product_id: id,
+  category,
+  description,
+}) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -52,12 +60,18 @@ function HomeCard({ img, title, price, id, category, description }) {
             <h5 className="text-lg font-semibold tracking-tight text-gray-700 overflow-hidden overflow-ellipsis h-[3em]">
               {title}
             </h5>
+            {/* <p className="text-left font-medium text-lg text-primary">
+              {quantity}
+            </p> */}
           </button>
         </div>
 
         <div className="flex items-center justify-between pt-3">
           <span className="text-2xl font-bold text-primary ">
             {`৳ ${price}`}
+            <span className="text-left font-medium text-sm text-primary block">
+              ({quantity})
+            </span>
           </span>
           {showButton ? (
             <button

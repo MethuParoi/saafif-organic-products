@@ -1,14 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import HomeCard from "../../ui/HomeCard";
 import useProduct from "../../services/apiProducts";
-import LoadingContext from "../../ContextApi/LoadingContext";
 import { useNavigate } from "react-router-dom";
 import SortContext from "../../ContextApi/SortContext";
 import ProductCard from "./ProductCard";
 import FrequentlyBoughtProduct from "./FrequentlyBoughtProducts/FrequentlyBoughtProduct";
 
 function ProductRows({ RowHeading }) {
-  // const { setIsLoading } = useContext(LoadingContext);
   const { data, error } = useProduct();
 
   const { sortedProducts } = useContext(SortContext);

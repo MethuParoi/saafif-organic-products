@@ -1,11 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import HomeCard from "./HomeCard";
 import useProduct from "../services/apiProducts";
-import LoadingContext from "../ContextApi/LoadingContext";
 import { useNavigate } from "react-router-dom";
 
 function HomeRows({ RowHeading }) {
-  // const { setIsLoading } = useContext(LoadingContext);
   const { data: ProductDesc, error } = useProduct();
 
   const navigate = useNavigate();
@@ -37,9 +35,10 @@ function HomeRows({ RowHeading }) {
           {displayedProducts &&
             displayedProducts.map((product) => (
               <HomeCard
-                key={product.id}
-                id={product.id}
+                key={product.product_id}
+                product_id={product.product_id}
                 category={product.category}
+                quantity={product.quantity}
                 img={product.image}
                 title={product.title}
                 price={product.price}
