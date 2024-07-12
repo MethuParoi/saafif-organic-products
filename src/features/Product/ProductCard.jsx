@@ -5,7 +5,15 @@ import toast from "react-hot-toast";
 import UpdateItemQuantity from "../Cart/UpdateItemQuantity";
 import { useEffect, useState } from "react";
 
-function ProductCard({ img, title, price, id, category, description }) {
+function ProductCard({
+  img,
+  title,
+  price,
+  quantity,
+  id,
+  category,
+  description,
+}) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -54,6 +62,9 @@ function ProductCard({ img, title, price, id, category, description }) {
         <div className="flex items-center justify-between pt-3">
           <span className="text-2xl font-bold text-primary ">
             {`৳ ${price}`}
+            <span className="text-left font-medium text-sm text-primary block">
+              ({quantity})
+            </span>
           </span>
           {showButton ? (
             <button

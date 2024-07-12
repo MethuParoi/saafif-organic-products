@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import HomeCard from "../../ui/HomeCard";
+import ProductCard from "../Product/ProductCard";
 import useProduct from "../../services/apiProducts";
 // import LoadingContext from "../../ContextApi/LoadingContext";
 import { useNavigate } from "react-router-dom";
@@ -34,10 +35,11 @@ function HomeRows({ RowHeading, displayedProducts }) {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-5">
           {displayedProducts &&
             displayedProducts.map((product) => (
-              <HomeCard
+              <ProductCard
                 key={product.id}
                 id={product.id}
                 category={product.category}
+                quantity={product.quantity}
                 img={product.image}
                 title={product.title}
                 price={product.price}
