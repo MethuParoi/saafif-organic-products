@@ -71,24 +71,24 @@ function ProductDropdown({ label, style, category }) {
                     navigate("/product");
                   }
                   const sorted = ProductDesc.filter(
-                    (item) => item.category === "men's clothing"
+                    (item) => item.category === "dairy"
                   );
                   setSortedProducts(sorted);
-                  updateRowHeading("Men's Clothing");
+                  updateRowHeading("Dairy");
                 }}
                 className="block px-1 md:px-4 py-2 w-[8rem] md:w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
               >
-                Men&apos;s Clothing
+                Dairy
               </button>
             </li>
             <li className="hover:bg-primaryHover hover:text-white">
               <button
                 onClick={() => {
                   const sorted = ProductDesc.filter(
-                    (item) => item.category === "jewelery"
+                    (item) => item.category === "fruit"
                   );
                   setSortedProducts(sorted);
-                  updateRowHeading("Jewelery");
+                  updateRowHeading("Fruits");
                   if (category === "category") {
                     setSortedProducts(sorted);
                     navigate("/product");
@@ -96,17 +96,17 @@ function ProductDropdown({ label, style, category }) {
                 }}
                 className="block px-1 md:px-4 py-2 w-[8rem] md:w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
               >
-                Jewelery
+                Fruits
               </button>
             </li>
             <li className="hover:bg-primaryHover hover:text-white">
               <button
                 onClick={() => {
                   const sorted = ProductDesc.filter(
-                    (item) => item.category === "women's clothing"
+                    (item) => item.category === "dry_fruit"
                   );
                   setSortedProducts(sorted);
-                  updateRowHeading("Women's Clothing");
+                  updateRowHeading("Dry Fruits");
                   if (category === "category") {
                     setSortedProducts(sorted);
                     navigate("/product");
@@ -114,7 +114,7 @@ function ProductDropdown({ label, style, category }) {
                 }}
                 className="block px-1 md:px-4 py-2 w-[8rem] md:w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
               >
-                Women&apos;s Clothing
+                Dry Fruits
               </button>
             </li>
 
@@ -122,10 +122,10 @@ function ProductDropdown({ label, style, category }) {
               <button
                 onClick={() => {
                   const sorted = ProductDesc.filter(
-                    (item) => item.category === "electronics"
+                    (item) => item.category === "oil"
                   );
                   setSortedProducts(sorted);
-                  updateRowHeading("Electronics");
+                  updateRowHeading("Oil");
                   if (category === "category") {
                     setSortedProducts(sorted);
                     navigate("/product");
@@ -133,7 +133,64 @@ function ProductDropdown({ label, style, category }) {
                 }}
                 className="block px-1 md:px-4 py-2 w-[8rem] md:w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
               >
-                Electronics
+                Oil
+              </button>
+            </li>
+
+            <li className="hover:bg-primaryHover hover:text-white">
+              <button
+                onClick={() => {
+                  const sorted = ProductDesc.filter(
+                    (item) => item.category === "meat"
+                  );
+                  setSortedProducts(sorted);
+                  updateRowHeading("Meat");
+                  if (category === "category") {
+                    setSortedProducts(sorted);
+                    navigate("/product");
+                  }
+                }}
+                className="block px-1 md:px-4 py-2 w-[8rem] md:w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
+              >
+                Meat
+              </button>
+            </li>
+
+            <li className="hover:bg-primaryHover hover:text-white">
+              <button
+                onClick={() => {
+                  const sorted = ProductDesc.filter(
+                    (item) => item.category === "fish"
+                  );
+                  setSortedProducts(sorted);
+                  updateRowHeading("Fish");
+                  if (category === "category") {
+                    setSortedProducts(sorted);
+                    navigate("/product");
+                  }
+                }}
+                className="block px-1 md:px-4 py-2 w-[8rem] md:w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
+              >
+                Fish
+              </button>
+            </li>
+
+            <li className="hover:bg-primaryHover hover:text-white">
+              <button
+                onClick={() => {
+                  const sorted = ProductDesc.filter(
+                    (item) => item.category === "eggs"
+                  );
+                  setSortedProducts(sorted);
+                  updateRowHeading("Eggs");
+                  if (category === "category") {
+                    setSortedProducts(sorted);
+                    navigate("/product");
+                  }
+                }}
+                className="block px-1 md:px-4 py-2 w-[8rem] md:w-[11rem] font-semibold rounded-md focus:text-white focus:outline-none focus:ring-2 focus:bg-primary focus:ring-opacity-50"
+              >
+                Eggs
               </button>
             </li>
           </ul>
