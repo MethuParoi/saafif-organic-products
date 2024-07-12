@@ -28,51 +28,79 @@ function Sort() {
   return (
     <div className=" bg-gray-50 shadow-sm rounded-sm p-1 flex gap-1">
       <SortButton
-        label={"Men's Clothing"}
-        isActive={activeLabel === "Men's Clothing"}
+        label={"Dairy"}
+        isActive={activeLabel === "Dairy"}
         onClick={() => {
           const sorted = ProductDesc.filter(
-            (item) => item.category === "men's clothing"
+            (item) => item.category === "dairy"
           );
           setSortedProducts(sorted);
-          handleButtonClick("Men's Clothing");
-          updateRowHeading("Men's Clothing");
+          handleButtonClick("Dairy");
+          updateRowHeading("Dairy");
         }}
       />
       <SortButton
-        label={"Jewelery"}
-        isActive={activeLabel === "jewelery"}
+        label={"Fruits"}
+        isActive={activeLabel === "Fruits"}
         onClick={() => {
           const sorted = ProductDesc.filter(
-            (item) => item.category === "jewelery"
+            (item) => item.category === "fruit"
           );
           setSortedProducts(sorted);
-          handleButtonClick("jewelery");
-          updateRowHeading("Jewelery");
+          handleButtonClick("Fruits");
+          updateRowHeading("Fruits");
         }}
       />
       <SortButton
-        label={"Women's Clothing"}
-        isActive={activeLabel === "women's clothing"}
+        label={"Dry Fruits"}
+        isActive={activeLabel === "Dry Fruits"}
         onClick={() => {
           const sorted = ProductDesc.filter(
-            (item) => item.category === "women's clothing"
+            (item) => item.category === "dry_fruit"
           );
           setSortedProducts(sorted);
-          handleButtonClick("women's clothing");
-          updateRowHeading("Women's Clothing");
+          handleButtonClick("Dry Fruits");
+          updateRowHeading("Dry Fruits");
         }}
       />
       <SortButton
-        label={"Electronics"}
-        isActive={activeLabel === "electronics"}
+        label={"Oil"}
+        isActive={activeLabel === "Oil"}
         onClick={() => {
-          const sorted = ProductDesc.filter(
-            (item) => item.category === "electronics"
-          );
+          const sorted = ProductDesc.filter((item) => item.category === "oil");
           setSortedProducts(sorted);
-          handleButtonClick("electronics");
-          updateRowHeading("Electronics");
+          handleButtonClick("Oil");
+          updateRowHeading("Oil");
+        }}
+      />
+      <SortButton
+        label={"Meat"}
+        isActive={activeLabel === "Meat"}
+        onClick={() => {
+          const sorted = ProductDesc.filter((item) => item.category === "meat");
+          setSortedProducts(sorted);
+          handleButtonClick("Meat");
+          updateRowHeading("Meat");
+        }}
+      />
+      <SortButton
+        label={"Fish"}
+        isActive={activeLabel === "Fish"}
+        onClick={() => {
+          const sorted = ProductDesc.filter((item) => item.category === "fish");
+          setSortedProducts(sorted);
+          handleButtonClick("Fish");
+          updateRowHeading("Fish");
+        }}
+      />
+      <SortButton
+        label={"Eggs"}
+        isActive={activeLabel === "Eggs"}
+        onClick={() => {
+          const sorted = ProductDesc.filter((item) => item.category === "eggs");
+          setSortedProducts(sorted);
+          handleButtonClick("Eggs");
+          updateRowHeading("Eggs");
         }}
       />
     </div>
