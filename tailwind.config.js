@@ -8,6 +8,9 @@ export default {
         primaryHover: "#8aa32e",
         secondary: "#db9121",
       },
+      fontFamily: {
+        gothic: ['"Century Gothic"', "sans-serif"], // Add Century Gothic here
+      },
     },
   },
   plugins: [],
