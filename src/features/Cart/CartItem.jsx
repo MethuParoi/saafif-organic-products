@@ -20,10 +20,14 @@ function CartItem({ item }) {
     description,
   } = item;
 
-  const image = img.split(" ");
+  // Ensure img is not null or undefined and split it
+  const image = img ? img.split(",") : [];
 
   const image1 = image[0];
   const image2 = image[1];
+  const image3 = image[2];
+  const image4 = image[3];
+
   const [displayImage, setDisplayImage] = useState(image1);
 
   function handleDisplayImage(imageKey) {
@@ -32,6 +36,12 @@ function CartItem({ item }) {
     }
     if (imageKey === "image2") {
       setDisplayImage(image2);
+    }
+    if (imageKey === "image3") {
+      setDisplayImage(image3);
+    }
+    if (imageKey === "image4") {
+      setDisplayImage(image4);
     }
   }
 
@@ -52,23 +62,47 @@ function CartItem({ item }) {
             />
 
             {/* photo options */}
-            <div className="pt-4 pl-[3.5rem]">
-              <button className=" ">
-                <img
-                  className="rounded-lg h-[2rem] w-[2rem] object-contain object-center border-2 border-gray-400 hover:border-primary hover:border-4 shadow-lg"
-                  src={image1}
-                  alt=""
-                  onClick={() => handleDisplayImage("image1")}
-                />
-              </button>
-              <button className="pl-[1rem]">
-                <img
-                  className="rounded-lg h-[2rem] w-[2rem] object-contain object-center border-2 border-gray-400 hover:border-primary hover:border-4 shadow-lg"
-                  src={image2}
-                  alt=""
-                  onClick={() => handleDisplayImage("image2")}
-                />
-              </button>
+            <div className="pt-4 flex items-center justify-center gap-x-1">
+              {image1 && (
+                <button className=" ">
+                  <img
+                    className="rounded-lg h-[2rem] w-[2rem] object-contain object-center border-2 border-gray-400 hover:border-primary hover:border-4 shadow-lg"
+                    src={image1}
+                    alt=""
+                    onClick={() => handleDisplayImage("image1")}
+                  />
+                </button>
+              )}
+              {image2 && (
+                <button className="pl-[1rem]">
+                  <img
+                    className="rounded-lg h-[2rem] w-[2rem] object-contain object-center border-2 border-gray-400 hover:border-primary hover:border-4 shadow-lg"
+                    src={image2}
+                    alt=""
+                    onClick={() => handleDisplayImage("image2")}
+                  />
+                </button>
+              )}
+              {image3 && (
+                <button className="pl-[1rem]">
+                  <img
+                    className="rounded-lg h-[2rem] w-[2rem] object-contain object-center border-2 border-gray-400 hover:border-primary hover:border-4 shadow-lg"
+                    src={image3}
+                    alt=""
+                    onClick={() => handleDisplayImage("image3")}
+                  />
+                </button>
+              )}
+              {image4 && (
+                <button className="pl-[1rem]">
+                  <img
+                    className="rounded-lg h-[2rem] w-[2rem] object-contain object-center border-2 border-gray-400 hover:border-primary hover:border-4 shadow-lg"
+                    src={image4}
+                    alt=""
+                    onClick={() => handleDisplayImage("image4")}
+                  />
+                </button>
+              )}
             </div>
           </div>
         </div>
