@@ -7,7 +7,7 @@ import {
   getTotalCartQunatity,
 } from "./cartSlice";
 import { useState } from "react";
-// import { useEffect } from "react";
+import ReactImageMagnify from "react-image-magnify";
 
 function CartItem({ item }) {
   const {
@@ -55,11 +55,37 @@ function CartItem({ item }) {
         <div className="flex justify-center items-center md:flex-initial md:justify-start md:items-start">
           {/* image and options */}
           <div>
-            <img
-              className="rounded-lg md:h-[14rem] h-[14rem] w-[14rem] md:w-[12rem] object-contain object-center border-2 border-gray-400 shadow-lg"
-              src={displayImage}
-              alt=""
-            />
+            <div className="rounded-lg md:h-[16rem] h-[14rem] w-[14rem] md:w-[14rem] border-2 border-gray-400 shadow-lg flex items-center justify-center">
+              <ReactImageMagnify
+                {...{
+                  smallImage: {
+                    alt: "product image",
+                    isFluidWidth: true,
+                    // isFluidHeight: true,
+                    src: displayImage,
+                  },
+                  imageStyle: {
+                    objectFit: "contain",
+                    objectPosition: "center",
+                  },
+                  largeImage: {
+                    src: displayImage,
+                    width: 1200,
+                    height: 800,
+                  },
+                  enlargedImageContainerDimensions: {
+                    width: "300%",
+                    height: "300%",
+                  },
+                  enlargedImagePosition: "beside",
+                  enlargedImageContainerStyle: {
+                    position: "absolute",
+                    background: "#fff",
+                    zIndex: 9999,
+                  },
+                }}
+              />
+            </div>
 
             {/* photo options */}
             <div className="pt-4 flex items-center justify-center gap-x-1">
@@ -121,7 +147,7 @@ function CartItem({ item }) {
         </div>
       </div>
 
-      <div className="flex items-center justify-center lg:justify-start gap-x-7 pt-5 md:pt-0 lg:absolute lg:top-[11rem] lg:left-[14rem]">
+      <div className="flex items-center justify-center lg:justify-start gap-x-7 pt-5 md:pt-0 lg:absolute lg:top-[11rem] lg:left-[16rem]">
         <UpdateItemQuantity
           currentQuantity={currentQuantity}
           productId={productId}
