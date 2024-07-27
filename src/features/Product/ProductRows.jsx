@@ -42,8 +42,8 @@ function ProductRows({ RowHeading }) {
               {data &&
                 ProductDesc.map((product) => (
                   <ProductCard
-                    key={product.id}
-                    id={product.id}
+                    key={product.product_id}
+                    product_id={product.product_id}
                     category={product.category}
                     img={product.image}
                     title={product.title}

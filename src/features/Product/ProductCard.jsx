@@ -10,7 +10,7 @@ function ProductCard({
   title,
   price,
   quantity,
-  id,
+  product_id: id,
   category,
   description,
 }) {

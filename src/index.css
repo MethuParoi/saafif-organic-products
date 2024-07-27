@@ -1,15 +1,5 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"); */
-/* @import url("https://fonts.googleapis.com/css2?family=Century+Gothic:wght@100;300;400;500;700;900&display=swap"); */
-
-/* Assuming Century Gothic is available to the user or hosted by you */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* index.css */
 
-/* body {
-  font-family: "Century Gothic", sans-serif; 
-  font-weight: 600;
-
-} */
