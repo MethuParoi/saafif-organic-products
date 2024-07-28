@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import CartItem from "./CartItem";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -10,6 +11,7 @@ import EmptyCart from "./EmptyCart";
 import Button from "../../ui/Button";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import Contact from "./Contact";
 
 function Cart() {
   const dispatch = useDispatch();
@@ -18,6 +20,8 @@ function Cart() {
   const cart = useSelector(getCart);
   const totalCartQuantity = useSelector(getTotalCartQunatity);
   const totalCartPrice = useSelector(getTotalCartPrice);
+
+  const [showOrderForm, setShowOrderForm] = useState(false);
 
   if (!cart.length) return <EmptyCart />;
 
@@ -33,7 +37,7 @@ function Cart() {
 
       <h2 className="mt-7 text-xl font-semibold">Your cart</h2>
 
-      <ul className=" divide-y-2 divide-stone-200 border-b-2">
+      <ul className="divide-y-2 divide-stone-200 border-b-2">
         {cart.map((item) => (
           <CartItem item={item} key={item.product_id} />
         ))}
@@ -55,7 +59,14 @@ function Cart() {
             toast.success("Cart cleared!");
           }}
         />
+        <Button
+          label="Order Now"
+          type="standard"
+          onClick={() => setShowOrderForm(true)}
+        />
       </div>
+
+      {showOrderForm && <Contact cartData={cart} />}
     </div>
   );
 }
