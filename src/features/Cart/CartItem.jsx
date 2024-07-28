@@ -55,18 +55,23 @@ function CartItem({ item }) {
         <div className="flex justify-center items-center md:flex-initial md:justify-start md:items-start">
           {/* image and options */}
           <div>
-            <div className="rounded-lg md:h-[16rem] h-[14rem] w-[14rem] md:w-[14rem] border-2 border-gray-400 shadow-lg flex items-center justify-center">
+            <div className="rounded-lg md:h-[16rem] h-[14rem] w-[14rem] md:w-[14rem] border-2 border-gray-400 shadow-lg flex items-center justify-center object-fill">
+              {/* <img
+                className="w-full h-full object-fill"
+                src={displayImage}
+                alt=""
+              /> */}
               <ReactImageMagnify
                 {...{
                   smallImage: {
                     alt: "product image",
                     isFluidWidth: true,
-                    // isFluidHeight: true,
                     src: displayImage,
                   },
                   imageStyle: {
-                    objectFit: "contain",
-                    objectPosition: "center",
+                    objectFit: "fill",
+                    width: "100%",
+                    height: "100%",
                   },
                   largeImage: {
                     src: displayImage,

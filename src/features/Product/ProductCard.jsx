@@ -4,6 +4,7 @@ import { addItem, getCart, getCurrentQuantityById } from "../Cart/cartSlice";
 import toast from "react-hot-toast";
 import UpdateItemQuantity from "../Cart/UpdateItemQuantity";
 import { useEffect, useState } from "react";
+import ReactImageMagnify from "react-image-magnify";
 
 function ProductCard({
   img,
@@ -42,13 +43,48 @@ function ProductCard({
     dispatch(addItem(newItem));
   };
   return (
-    <div className="my-4 pb-4 md:w-[15rem] md:min-h-[21rem] border rounded-lg bg-gray-50 border-transparent shadow-2xl">
-      <div onClick={navigate}>
-        <img
+    <div className="my-4 pb-4 md:w-[15rem] md:min-h-[21rem] border rounded-lg bg-gray-50 border-transparent shadow-2xl ">
+      <div>
+        {/* <img
           className="rounded-t-lg min-h-[14rem] max-h-[14rem] w-full object-contain object-center border-2 border-gray-400"
           src={img}
           alt="product image"
-        />
+        /> */}
+        {/* image magnify functionality */}
+        <div className="rounded-t-lg min-h-[15rem] max-h-[15rem] w-full object-scale-down object-center border-2 border-gray-400 flex items-center justify-center ">
+          <ReactImageMagnify
+            {...{
+              smallImage: {
+                alt: "product image",
+                isFluidWidth: true,
+                src: img,
+              },
+              imageStyle: {
+                objectFit: "contain",
+                width: "100%",
+                height: "100%",
+              },
+              // style: {
+              //   overflow: "hidden",
+              // },
+              largeImage: {
+                src: img,
+                width: 1200,
+                height: 800,
+              },
+              enlargedImageContainerDimensions: {
+                width: "300%",
+                height: "300%",
+              },
+              enlargedImagePosition: "beside",
+              enlargedImageContainerStyle: {
+                position: "absolute",
+                background: "#fff",
+                zIndex: 9999,
+              },
+            }}
+          />
+        </div>
       </div>
       <div className="px-2">
         <div className="pt-2">
