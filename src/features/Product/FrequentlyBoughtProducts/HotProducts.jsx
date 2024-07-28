@@ -23,7 +23,7 @@ function HotProducts({ img, title, price, id, category, description }) {
 
   const handleAddToCart = () => {
     const newItem = {
-      productId: id,
+      productId: product_id,
       title,
       quantity: 1,
       unitPrice: price,

@@ -1,12 +1,9 @@
-import { useContext } from "react";
-import ProductCard from "../ProductCard";
-// import LoadingContext from "../../../ContextApi/LoadingContext";
-import useProduct from "../../../services/apiProducts";
+import useHotProduct from "../../../services/apiHotProducts";
 import HotProducts from "./HotProducts";
 
 function FrequentlyBoughtProduct() {
   //   const { setIsLoading } = useContext(LoadingContext);
-  const { data: ProductDesc } = useProduct();
+  const { data: ProductDesc } = useHotProduct();
   return (
     <div>
       <div>
@@ -18,19 +15,17 @@ function FrequentlyBoughtProduct() {
 
       <div className="pt-[18px]">
         {ProductDesc &&
-          ProductDesc.filter((product) => [5, 1, 4].includes(product.id)).map(
-            (product) => (
-              <HotProducts
-                key={product.id}
-                id={product.id}
-                category={product.category}
-                img={product.image}
-                title={product.title}
-                price={product.price}
-                description={product.description}
-              />
-            )
-          )}
+          ProductDesc.map((product) => (
+            <HotProducts
+              key={product.product_id}
+              product_id={product.product_id}
+              category={product.category}
+              img={product.image}
+              title={product.title}
+              price={product.price}
+              description={product.description}
+            />
+          ))}
       </div>
     </div>
   );
