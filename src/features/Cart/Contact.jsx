@@ -32,7 +32,7 @@ export default function Contact({ cartData }) {
     return (
         <div className="flex flex-col justify-center my-10 py-6 ">
             <form onSubmit={onSubmit} className="space-y-6">
-                <h2 className="text-2xl font-bold text-center text-primary mb-4">Contact Details</h2>
+                <h2 className="text-2xl font-bold text-center text-primary mb-4">Address & Contact</h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
@@ -40,7 +40,7 @@ export default function Contact({ cartData }) {
                         <input
                             type="text"
                             name="name"
-                            placeholder="Full Name"
+                            placeholder="John Doe"
                             required
                             className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                         />
@@ -51,7 +51,7 @@ export default function Contact({ cartData }) {
                         <input
                             type="tel"
                             name="phone"
-                            placeholder="Phone Number"
+                            placeholder="+880 163 123 4567"
                             required
                             className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                         />
@@ -62,7 +62,7 @@ export default function Contact({ cartData }) {
                         <input
                             type="email"
                             name="email"
-                            placeholder="Email (optional)"
+                            placeholder="john@example.com"
                             className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                         />
                     </div>
@@ -71,7 +71,7 @@ export default function Contact({ cartData }) {
                         <label htmlFor="address" className="block text-lg font-medium text-gray-850">Address</label>
                         <textarea
                             name="address"
-                            placeholder="Street Address, House No."
+                            placeholder=" House No, Street Address, Area"
                             required
                             className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                         />
@@ -99,16 +99,6 @@ export default function Contact({ cartData }) {
                         />
                     </div>
 
-                    {/* <div>
-                        <label htmlFor="postal_code" className="block text-lg font-medium text-gray-850">Postal Code</label>
-                        <input
-                            type="text"
-                            name="postal_code"
-                            placeholder="Postal Code"
-                            required
-                            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                        />
-                    </div> */}
                 </div>
 
                 <div className="text-center mt-6">
@@ -120,15 +110,7 @@ export default function Contact({ cartData }) {
                     </button>
                 </div>
             </form>
-
-
             <span className="block mt-4 text-center text-gray-700">{result}</span>
         </div >
     );
 }
-
-
-
-
-
-
